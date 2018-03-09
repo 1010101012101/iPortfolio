@@ -5,46 +5,151 @@ import {
     Icon,
     Grid
 } from 'semantic-ui-react';
+import NavBar from '../NavBar/navBar'
 class Skill extends Component {
     render() {
         return (
             <Container>
-                <Header size='large' textAlign='center'>
+            <NavBar />
+                <Header size='huge' textAlign='center'
+                    style={{ fontSize: '3em', marginTop: '8%' }}>
                     <Header.Content>
                         My Skills
                 </Header.Content>
                 </Header>
-
+                <Header size='large' textAlign='center'
+                    style={{
+                        marginTop: '5%',
+                        marginBottom: '5%'
+                    }}>
+                    Lorem ipsum dolor sit amet
+                </Header>
                 <Grid centered divided columns={3}>
                     <Grid.Column>
-                        <Header as='h2' icon>
-                            <Icon name='lightbulb' />
-                            <Header.Content>
-                                Ideas
-                        </Header.Content>
-                            <Header.Subheader>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        <Header size='large' textAlign='center'>
+                            More comfortable
+                        <Header.Subheader  style={{marginTop: '2%', marginBottom: '2%'}}>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
                         </Header.Subheader>
-                        </Header>
+                            </Header>
+                        <Container>
+                            <Grid columns={2} textAlign='center'>
+                                <Grid.Row>
+                                    <Grid.Column>
+                                        <Header size='small' icon>
+                                            <Icon name='settings' />
+                                            Account Settings
+                                        </Header>
+                                    </Grid.Column>
+                                    <Grid.Column>
+                                        <Header size='small' icon>
+                                            <Icon name='settings' />
+                                            Account Settings
+                                        </Header>
+                                    </Grid.Column>
+                                </Grid.Row>
+
+                                <Grid.Row>
+                                    <Grid.Column>
+                                        <Header size='small' icon>
+                                            <Icon name='settings' />
+                                            Account Settings
+                                        </Header>
+                                    </Grid.Column>
+                                    <Grid.Column>
+                                        <Header size='small' icon>
+                                            <Icon name='settings' />
+                                            Account Settings
+                                        </Header>
+                                    </Grid.Column>
+                                </Grid.Row>
+                            </Grid>
+                        </Container>
                     </Grid.Column>
                     <Grid.Column>
-                        <Header as='h2' icon>
-                            <Icon name='puzzle' />
-                            <Header.Content>Adaptability</Header.Content>
-                            <Header.Subheader>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        </Header.Subheader>
-                        </Header>
-                    </Grid.Column>
-                    <Grid.Column>
-                        <Header as='h2' icon>
-                            <Icon name='code' />
-                            <Header.Content>Code</Header.Content>
-                            <Header.Subheader>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        <Header size='large' textAlign='center'>
+                            Comfortable
+                            <Header.Subheader 
+                            style={{marginTop: '2%', marginBottom: '2%'}}>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
                         </Header.Subheader>
                         </Header>
 
+                        <Container>
+                            <Grid columns={2} textAlign='center'>
+                                <Grid.Row>
+                                    <Grid.Column>
+                                        <Header size='small' icon>
+                                            <Icon name='settings' />
+                                            Account Settings
+                                        </Header>
+                                    </Grid.Column>
+                                    <Grid.Column>
+                                        <Header size='small' icon>
+                                            <Icon name='settings' />
+                                            Account Settings
+                                        </Header>
+                                    </Grid.Column>
+                                </Grid.Row>
+
+                                <Grid.Row>
+                                    <Grid.Column>
+                                        <Header size='small' icon>
+                                            <Icon name='settings' />
+                                            Account Settings
+                                        </Header>
+                                    </Grid.Column>
+                                    <Grid.Column>
+                                        <Header size='small' icon>
+                                            <Icon name='settings' />
+                                            Account Settings
+                                        </Header>
+                                    </Grid.Column>
+                                </Grid.Row>
+                            </Grid>
+                        </Container>
+                    </Grid.Column>
+                    <Grid.Column>
+                        <Header size='large' textAlign='center'>
+
+                            Less comfortable
+                            <Header.Subheader  style={{marginTop: '2%', marginBottom: '2%'}}>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                        </Header.Subheader>
+                            </Header>
+                        <Container>
+                            <Grid columns={2} textAlign='center'>
+                                <Grid.Row>
+                                    <Grid.Column>
+                                        <Header size='small' icon>
+                                            <Icon name='settings' />
+                                            Account Settings
+                                        </Header>
+                                    </Grid.Column>
+                                    <Grid.Column>
+                                        <Header size='small' icon>
+                                            <Icon name='settings' />
+                                            Account Settings
+                                        </Header>
+                                    </Grid.Column>
+                                </Grid.Row>
+
+                                <Grid.Row>
+                                    <Grid.Column>
+                                        <Header size='small' icon>
+                                            <Icon name='settings' />
+                                            Account Settings
+                                        </Header>
+                                    </Grid.Column>
+                                    <Grid.Column>
+                                        <Header size='small' icon>
+                                            <Icon name='settings' />
+                                            Account Settings
+                                        </Header>
+                                    </Grid.Column>
+                                </Grid.Row>
+                            </Grid>
+                        </Container>
                     </Grid.Column>
                 </Grid>
             </Container>

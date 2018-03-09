@@ -17,13 +17,21 @@ class LandingPage extends Component {
             <div className={styles.mainBackground}>
                 <NavBar />
                 <Grid container verticalAlign='middle' columns={1}>
-                    <Grid.Row textAlign='center' style={{ marginTop: '5%' }}>
-                        <Segment padded='very' size='massive'>
-                            <Segment textAlign='center' padded='very' size='massive'>
+                    <Grid.Row textAlign='center'
+                        style={{
+                            marginTop: '15%',
+                            fontWeight: 'bold',
+
+                        }}>
+                        <Segment basic padded='very' size='massive'>
+                            <Header size='massive' textAlign='center' style={{ fontSize: '2.5em' }}>
+                                Khang Tran
+                            </Header>
+                            <Segment basic textAlign='center' padded='very' size='huge'>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                             </Segment>
-                            <Segment textAlign='center' padded='very' size='massive'>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                            <Segment textAlign='center' basic>
+                                <Button basic secondary size='huge' >Learn more about me</Button>
                             </Segment>
                         </Segment>
 
@@ -31,16 +39,15 @@ class LandingPage extends Component {
                     <Grid.Row>
                         <Grid.Column textAlign='center'
                             style={{
-                                marginTop: '10em',
-                                fontSize: '1em'
+                                marginTop: '15%',
+                                fontSize: '1.5em'
                             }}
                         >
-                            <Segment basic size='large'>
-                                Ready for more?!
-
+                                <Segment basic size='large'>
+                                    Ready for more?!
+    
                             </Segment>
-                            <Icon size='large' name="chevron down" />
-
+                                <Icon size='large' name="chevron down" />
 
                         </Grid.Column>
                     </Grid.Row>
