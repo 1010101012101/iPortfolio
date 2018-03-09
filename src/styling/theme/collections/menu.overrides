@@ -1,3 +1,6 @@
 /*******************************
          Site Overrides
 *******************************/
+.ui.secondary.pointing.menu {
+    border-bottom: none !important;
+}

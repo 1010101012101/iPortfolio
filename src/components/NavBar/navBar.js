@@ -3,24 +3,27 @@ import React, { Component } from 'react';
 import {
     Button,
     Menu,
-    Container
+    Container,
+    Icon,
+    Image
 } from 'semantic-ui-react';
+import * as styles from './navBar.less';
 class NavBar extends Component {
     render() {
         return (
             <Menu
                 fixed='top'
-                inverted={true}
-                size='large'>
-                <Container>
-                    <Menu.Menu inverted position='right'>
-                        <Menu.Item as='a' active>Home</Menu.Item>
-                        <Menu.Item as='a'>Work</Menu.Item>
-                        <Menu.Item as='a'>Company</Menu.Item>
-                        <Menu.Item as='a'>Careers</Menu.Item>
-                    </Menu.Menu>
-                </Container>
-            </Menu>
+                size='massive'
+                text
+                secondary
+                pointing>
+                <Menu.Menu position='right'>
+                    <Menu.Item href='/resume'>Resume</Menu.Item>
+                    <Menu.Item href='/project'>Project</Menu.Item>
+                    <Menu.Item href='/skill'>Skill</Menu.Item>
+                    <Menu.Item href='/about'>About</Menu.Item>
+                </Menu.Menu>
+            </ Menu>
 
         );
     }
