@@ -6,7 +6,7 @@ class About extends Component {
             <Container style={{ width: '80%' }}>
                 <Header size='huge' textAlign='center'
                     style={{
-                        marginTop: '5%',
+                        marginTop: '5g%',
                         marginBottom: '10%',
                         fontSize: '2.5em'
 
