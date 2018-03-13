@@ -4,10 +4,10 @@ import About from '../About/about';
 import Contact from '../Contact/contact';
 import Project from '../Project/project';
 import Resume from '../Resume/resume';
-import Skill from '../Skill/skill';
+import Skill from '../Skill/index';
 import { Switch, Route } from 'react-router-dom';
 
-const Router = () => 
+const Router = () =>
     <Switch>
         <Route exact path='/' component={LandingPage}></Route>
         <Route exact path='/about' component={About}></Route>

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import {
     Container,
     Segment,
@@ -14,6 +14,7 @@ import NavBar from '../NavBar/navBar';
 import Background from './background';
 import Heading from './heading';
 class LandingPage extends Component {
+    static propType = {};
     render() {
         return (
             <Container fluid>

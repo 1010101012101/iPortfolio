@@ -14,11 +14,12 @@ class NavBar extends Component {
             <Menu borderless
                 fixed='top'
                 size='massive'
-
                 secondary
-                pointing fluid
+                pointing
+                fluid
                 style={{ position: 'relative' }}>
                 <Menu.Menu position='right'>
+                    <Menu.Item header href='/'>HOME</Menu.Item>
                     <Menu.Item header href='/resume'>RESUME</Menu.Item>
                     <Menu.Item header href='/project'>PROJECT</Menu.Item>
                     <Menu.Item header href='/skill'>SKILL</Menu.Item>
