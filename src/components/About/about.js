@@ -1,31 +1,43 @@
 import React, { Component } from 'react';
-import { Segment, Header, Container, Grid, Image } from 'semantic-ui-react';
+import { TransitionablePortal, Button, Transition, Segment, Header, Container, Grid, Image } from 'semantic-ui-react';
+import NavBar from '../NavBar/navBar';
+import Heading from './heading';
+import Content from './content';
 class About extends Component {
-    render() {
-        return (
-            <Container style={{ width: '80%' }}>
-                <Header size='huge' textAlign='center'
-                    style={{
-                        marginTop: '5g%',
-                        marginBottom: '10%',
-                        fontSize: '2.5em'
+    state = { visible1: true, visible2: false };
+    toggleVisibility = () => {
+        this.setState({ visible1: !this.state.visible1 });
+        this.setState({ visible2: !this.state.visible2 });
 
-                    }}>
-                    About me
-                </Header>
-                <Grid centered columns={2}>
-                    <Grid.Row>
-                        <Grid.Column width={7} verticalAlign='top'>
-                            <Image avatar size='medium' bordered src='https://img00.deviantart.net/2100/i/2015/108/5/5/tony_stark__iron_man_by_mannaz11-d70u4p8.jpg' circular />
-                        </Grid.Column>
-                        <Grid.Column verticalAlign='middle' width={9}>
-                            <Segment padded='very' size='huge'>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.,Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </Segment>
-                        </Grid.Column>
+    }
+
+    render() {
+        const { visible1, visible2 } = this.state;
+        return (
+            < Container >
+                <Button onClick={this.toggleVisibility} />
+
+                <NavBar />
+                <Grid centered style={{ marginTop: '5%' }}>
+
+                    <Grid.Row stretched>
+                        <Transition onComplete={() => this.setState({ visible1: true })} visible={visible1} animation='horizontal flip' duration={200}>
+
+                            {/* <Transition onClose={() => this.setState({ open: !this.state.open })} open={open} transition={{ animation, duration }}> */}
+                            <Grid.Column width={6} verticalAlign='middle' style={{ paddingRight: 0 }}>
+                                <Heading />
+                            </Grid.Column>
+                            {/* </Transition> */}
+                        </Transition>
+
+                        <Transition unmountOnHide={true} visible={!visible2} animation='slide right' duration={500}>
+                            <Grid.Column verticalAlign='middle' width={8} style={{ paddingLeft: 0 }}>
+                                <Content />
+                            </Grid.Column>
+                        </Transition>
                     </Grid.Row>
 
-                </Grid>
+                </Grid>;
             </Container >
 
 

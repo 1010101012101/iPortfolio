@@ -1,3 +1,10 @@
 /*******************************
     User Variable Overrides
 *******************************/
+@itemVerticalPadding: @relativeBig;
+@minHeight: (@itemVerticalPadding * 3) + 1em;
+@secondaryPointingItemHorizontalPadding: @relativeMassive;
+@secondaryPointingBorderWidth: 2px;
+@secondaryPointingBorderColor: black;
+@secondaryPointingHeaderColor: @primaryColor;
+@secondaryPointingBorderColor: @primaryColor;

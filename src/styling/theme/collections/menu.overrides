@@ -1,6 +1,9 @@
 /*******************************
          Site Overrides
 *******************************/
+.ui.secondary.pointing.menu .item {
+  align-self: center;
+}
 .ui.secondary.pointing.menu {
-    border-bottom: none !important;
+    border-bottom: @secondaryPointingBorderWidth solid @black;
 }

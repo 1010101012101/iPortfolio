@@ -11,19 +11,20 @@ import * as styles from './navBar.less';
 class NavBar extends Component {
     render() {
         return (
-            <Menu
+            <Menu borderless
                 fixed='top'
                 size='massive'
-                text
+
                 secondary
-                pointing>
+                pointing fluid
+                style={{ position: 'relative' }}>
                 <Menu.Menu position='right'>
-                    <Menu.Item href='/resume'>Resume</Menu.Item>
-                    <Menu.Item href='/project'>Project</Menu.Item>
-                    <Menu.Item href='/skill'>Skill</Menu.Item>
-                    <Menu.Item href='/about'>About</Menu.Item>
+                    <Menu.Item header href='/resume'>RESUME</Menu.Item>
+                    <Menu.Item header href='/project'>PROJECT</Menu.Item>
+                    <Menu.Item header href='/skill'>SKILL</Menu.Item>
+                    <Menu.Item header href='/about'>ABOUT</Menu.Item>
                 </Menu.Menu>
-            </ Menu>
+            </Menu>
 
         );
     }

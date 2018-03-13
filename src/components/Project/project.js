@@ -47,7 +47,7 @@ class Project extends Component {
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
                                     <p>incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
                                 </Segment>
-                                <Button basic size='large' secondary positive>
+                                <Button basic size='large' primary>
                                     View more..
                                 </Button>
                             </Segment>

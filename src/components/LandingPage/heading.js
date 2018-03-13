@@ -1,38 +1,45 @@
 import React, { Component } from 'react';
 import {
-    Container,
+    Grid,
+    Segment,
     Header,
-    Icon,
-    Button
+    Button,
+    Icon
 } from 'semantic-ui-react';
 const HomepageHeading = () => (
-    <Container text>
-        <Header
-            as='h1'
-            content='Imagine-a-Company'
-            inverted
+    <Grid container columns={1}>
+        <Grid.Row textAlign='center'
             style={{
-                fontSize: '4em',
-                fontWeight: 'normal',
-                marginBottom: 0,
-                marginTop: '3em',
-            }}
-        />
-        <Header
-            as='h2'
-            content='Do whatever you want when you want to.'
-            inverted
-            style={{
-                fontSize: '1.7em',
-                fontWeight: 'normal',
-                marginTop: '1.5em',
-            }}
-        />
-        <Button primary size='huge'>
-            Get Started
-        <Icon name='right arrow' />
-        </Button>
-    </Container>
+                marginTop: '20%',
+                fontWeight: 'bold'
+            }}>
+            <Segment basic padded='very' size='massive'>
+                <Header inverted size='massive' textAlign='center' style={{ fontSize: '2.5em' }}>
+                    Khang Tran
+                            </Header>
+                <Segment basic textAlign='center' padded='very' size='huge'>
+                    <Header inverted size='medium' textAlign='center' >
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </Header>
+                </Segment>
+            </Segment>
+
+        </Grid.Row>
+        <Grid.Row>
+            <Grid.Column textAlign='center'
+                style={{
+                    marginTop: '12%',
+                    fontSize: '1.5em'
+                }}>
+                <Segment basic size='medium'>
+                    <Header inverted size='small'>
+                        Ready for more?!
+                                    </Header>
+                    <Icon inverted size='large' name='chevron down' />
+                </Segment>
+            </Grid.Column>
+        </Grid.Row>
+    </Grid>
 )
 
 export default HomepageHeading;
