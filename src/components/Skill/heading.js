@@ -3,7 +3,7 @@ import { Divider, Container, Header } from 'semantic-ui-react';
 const Heading = () => (
     <Container fluid>
         <Header color='red' size='huge' textAlign='center'
-            style={{ fontSize: '3em', marginTop: '5%' }}>
+            style={{ marginTop: '5%' }}>
             <Header.Content>
                 My Skills
                 <Divider />

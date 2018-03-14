@@ -7,11 +7,9 @@ class AboutHeading extends Component {
                 backgroundColor: '#80d6ff'
             }}>
                 <Header color='red' >
-                    <Header.Content style={{
-                        marginBottom: '5%'
-                    }}>
+                    <Header.Content>
                         About me
-                        <Divider inverted style={{ backgroundColor: '#f44336' }} />
+                    <Divider inverted style={{ backgroundColor: '#f44336' }} />
                     </Header.Content>
                 </Header>
                 <Image avatar size='small' bordered src='https://img00.deviantart.net/2100/i/2015/108/5/5/tony_stark__iron_man_by_mannaz11-d70u4p8.jpg' circular

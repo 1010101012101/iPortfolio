@@ -6,12 +6,12 @@ import {
     Grid
 } from 'semantic-ui-react';
 import NavBar from '../NavBar/navBar';
-import Skill from './skill';
+import SkillItem from './SkillItem';
 class SkillGroup extends Component {
     renderItems = (skillsItem) =>
         skillsItem.map((item, index) => (
             <Grid.Column key={index}>
-                <Skill header={item.name} icon={item.icon} />
+                <SkillItem header={item.name} icon={item.icon} />
             </Grid.Column>
         ));
     render() {

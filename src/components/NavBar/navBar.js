@@ -17,7 +17,7 @@ class NavBar extends Component {
                 secondary
                 pointing
                 fluid
-                style={{ position: 'relative' }}>
+                style={{ position: 'relative', position: 'sticky', backgroundColor: 'white' }}>
                 <Menu.Menu position='right'>
                     <Menu.Item header href='/'>HOME</Menu.Item>
                     <Menu.Item header href='/resume'>RESUME</Menu.Item>

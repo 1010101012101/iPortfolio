@@ -4,7 +4,7 @@ import About from '../About/about';
 import Contact from '../Contact/contact';
 import Project from '../Project/project';
 import Resume from '../Resume/resume';
-import Skill from '../Skill/index';
+import Skill from '../Skill/skill';
 import { Switch, Route } from 'react-router-dom';
 
 const Router = () =>

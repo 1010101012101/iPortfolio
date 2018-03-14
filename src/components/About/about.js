@@ -4,27 +4,32 @@ import NavBar from '../NavBar/navBar';
 import Heading from './heading';
 import Content from './content';
 class About extends Component {
-    state = { headingVisibility: true, contentVisibility: false };
-    toggleHeadingVisibility = () => {
-        this.setState({ headingVisibility: !this.state.headingVisibility });
-    }
+    state = { header: true, content: false }
+    componentWillReceiveProps() {
+        let { visible } = this.props;
 
-    toggleContentVisibility = () => {
-        this.setState({ contentVisibility: !this.state.contentVisibility });
+        this.setState({
+            header: visible,
+            content: !visible
+        });
     }
-
+    toggle = () => {
+        this.setState({ header: true });
+    }
     render() {
-        const { headingVisibility, contentVisibility } = this.state;
+        let { header, content } = this.state;
+
+
+
         return (
-            <Container>
-                <NavBar />
-                <Grid centered style={{ marginTop: '5%' }}>
+            <Container fluid>
+                <Grid centered style={{ marginTop: '13%' }}>
                     <Grid.Row stretched>
                         <Transition
-                            onComplete={this.toggleHeadingVisibility}
-                            visible={headingVisibility}
+                            visible={header}
                             animation='horizontal flip'
-                            duration={200}>
+                            duration={200}
+                            onComplete={this.toggle}>
                             <Grid.Column width={6} verticalAlign='middle'
                                 style={{ paddingRight: 0 }}>
                                 <Heading />
@@ -32,7 +37,7 @@ class About extends Component {
                         </Transition>
                         <Transition
                             unmountOnHide={true}
-                            visible={!contentVisibility}
+                            visible={content}
                             animation='slide right'
                             duration={500}>
                             <Grid.Column verticalAlign='middle' width={8}
@@ -43,7 +48,8 @@ class About extends Component {
                     </Grid.Row>
 
                 </Grid>
-            </Container>
+
+            </Container >
         );
     }
 }

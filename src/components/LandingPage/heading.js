@@ -9,7 +9,7 @@ class HomepageHeading extends Component {
             <Grid container columns={1}>
                 <Grid.Row textAlign='center'
                     style={{
-                        marginTop: '20%',
+                        marginTop: '15%',
                         fontWeight: 'bold'
                     }}>
                     <Segment basic padded='very' size='massive'>
@@ -27,10 +27,10 @@ class HomepageHeading extends Component {
                 <Grid.Row>
                     <Grid.Column textAlign='center'
                         style={{
-                            marginTop: '12%',
+                            marginTop: '5%',
                             fontSize: '1.5em'
                         }}>
-                        <Button color='white' size='large' inverted basic animated='vertical' style={{ width: '20%' }}>
+                        <Button size='large' inverted basic animated='vertical' style={{ width: '20%' }}>
                             <Button.Content hidden>
                                 Ready for more?!
                             </Button.Content>
@@ -40,7 +40,7 @@ class HomepageHeading extends Component {
                         </Button>
                     </Grid.Column>
                 </Grid.Row>
-            </Grid>
+            </Grid >
         );
     }
 }

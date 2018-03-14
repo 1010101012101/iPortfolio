@@ -18,10 +18,9 @@ class LandingPage extends Component {
     render() {
         return (
             <Container fluid>
-                <NavBar />
                 <Background />
                 <Heading />
-            </Container >
+            </Container>
         );
     }
 }
