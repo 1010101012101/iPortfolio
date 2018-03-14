@@ -5,7 +5,7 @@ import {
     Icon
 } from 'semantic-ui-react';
 
-class Skill extends Component {
+class SkillItem extends Component {
     render() {
         const { header, icon } = this.props;
 
@@ -22,4 +22,4 @@ class Skill extends Component {
     }
 }
 
-export default Skill;
+export default SkillItem;

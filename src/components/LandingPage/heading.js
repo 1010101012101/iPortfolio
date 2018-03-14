@@ -13,7 +13,7 @@ class HomepageHeading extends Component {
                         fontWeight: 'bold'
                     }}>
                     <Segment basic padded='very' size='massive'>
-                        <Header inverted size='massive' textAlign='center' style={{ fontSize: '2.5em' }}>
+                        <Header inverted size='huge' textAlign='center' style={{ fontSize: '2.5em' }}>
                             Khang Tran
                             </Header>
                         <Segment basic textAlign='center' padded='very' size='huge'>
@@ -30,7 +30,7 @@ class HomepageHeading extends Component {
                             marginTop: '12%',
                             fontSize: '1.5em'
                         }}>
-                        <Button size='large' secondary basic animated='vertical' style={{ width: '20%' }}>
+                        <Button color='white' size='large' inverted basic animated='vertical' style={{ width: '20%' }}>
                             <Button.Content hidden>
                                 Ready for more?!
                             </Button.Content>

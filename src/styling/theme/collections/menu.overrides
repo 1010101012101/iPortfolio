@@ -7,3 +7,6 @@
 .ui.secondary.pointing.menu {
     border-bottom: @secondaryPointingBorderWidth solid @black;
 }
+.ui.secondary.pointing.menu .dropdown.item:hover, .ui.secondary.pointing.menu .link.item:hover, .ui.secondary.pointing.menu a.item:hover {
+    border-color: @primaryColor;
+}

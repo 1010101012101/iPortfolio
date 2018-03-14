@@ -7,6 +7,13 @@ class Project extends Component {
         return (
             <Container style={{ width: '90%' }}>
                 <NavBar />
+                <Header color='red' size='huge' textAlign='center'
+                    style={{ fontSize: '3em', marginTop: '5%' }}>
+                    <Header.Content>
+                        My Projects
+                <Divider />
+                    </Header.Content>
+                </Header>
                 <Grid
                     container
                     style={{ marginTop: '5em' }}
@@ -14,7 +21,7 @@ class Project extends Component {
                     <Grid.Row textAlign='center'>
                         <Grid.Column width={7} textAlign='center'>
                             <Segment basic>
-                                <Header size='large' textAlign='center'>
+                                <Header color='red' size='large' textAlign='center'>
                                     <Header.Content>
                                         Project Name
                                     </Header.Content>

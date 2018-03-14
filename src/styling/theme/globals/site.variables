@@ -4,8 +4,7 @@
 
 @red: #f44336;
 @lightRed: #ff7961;
-@blue: #42a5f5;
-@lightBlue: #80d6ff;
+@blue:  #0069c0;
 @green: #26C281;
 @black: #212121;
 @primaryColor   : @red;

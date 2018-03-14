@@ -8,36 +8,34 @@ import {
 import NavBar from '../NavBar/navBar';
 import Skill from './skill';
 class SkillGroup extends Component {
+    renderItems = (skillsItem) =>
+        skillsItem.map((item, index) => (
+            <Grid.Column key={index}>
+                <Skill header={item.name} icon={item.icon} />
+            </Grid.Column>
+        ));
     render() {
-        const { header, content } = this.props;
+        const { skills, header, content } = this.props;
+        const firstRowItems = this.renderItems(skills.slice(0, Math.round(skills.length / 2)));
+        const secondRowItems = this.renderItems(skills.slice(Math.round(skills.length / 2), skills.length));
         return (
             <Container fluid>
-                <Header size='large' textAlign='center'>
-                    <Header.Content>
+                <Header color='blue' size='large' textAlign='center'>
+                    <Header.Content style={{ marginBottom: '2%' }}>
                         {this.props.header}
                     </Header.Content>
-                    <Header.Subheader style={{ marginTop: '2%', marginBottom: '2%' }}>
+                    <Header.Subheader style={{ marginTop: '2%', marginBottom: '5%' }}>
                         {this.props.content}
                     </Header.Subheader>
                 </Header>
                 <Container>
                     <Grid columns={2} textAlign='center'>
                         <Grid.Row>
-                            <Grid.Column>
-                                <Skill header="Account Settings" icon="settings" />
-                            </Grid.Column>
-                            <Grid.Column>
-                                <Skill header="Account Settings" icon="settings" />
-                            </Grid.Column>
+                            {firstRowItems}
                         </Grid.Row>
 
                         <Grid.Row>
-                            <Grid.Column>
-                                <Skill header="Account Settings" icon="settings" />
-                            </Grid.Column>
-                            <Grid.Column>
-                                <Skill header="Account Settings" icon="settings" />
-                            </Grid.Column>
+                            {secondRowItems}
                         </Grid.Row>
                     </Grid>
                 </Container>

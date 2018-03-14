@@ -9,9 +9,14 @@ import NavBar from '../NavBar/navBar';
 import SkillGroup from './skillGroup';
 import Heading from './heading';
 class Index extends Component {
+    state = {
+        moreComfortableList: [{ name: 'Account Settings1', icon: 'settings' }, { name: 'Account Settings2', icon: 'settings' }, { name: 'Account Settings3', icon: 'settings' }, { name: 'Account Settings4', icon: 'settings' }],
+        comfortableList: [{ name: 'Account Settings1', icon: 'settings' }, { name: 'Account Settings2', icon: 'settings' }, { name: 'Account Settings3', icon: 'settings' }, { name: 'Account Settings4', icon: 'settings' }],
+        lessComfortableList: [{ name: 'Account Settings1', icon: 'settings' }, { name: 'Account Settings2', icon: 'settings' }, { name: 'Account Settings3', icon: 'settings' }, { name: 'Account Settings4', icon: 'settings' }],
+    }
     render() {
         return (
-            <Container>
+            <Container fluid>
                 <NavBar />
                 <Heading />
                 <Grid centered divided columns={3}>
@@ -19,18 +24,21 @@ class Index extends Component {
                         <SkillGroup
                             header="More Comfortable"
                             content="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+                            skills={this.state.moreComfortableList}
                         />
                     </Grid.Column>
                     <Grid.Column>
                         <SkillGroup
                             header="Comfortable"
                             content="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+                            skills={this.state.comfortableList}
                         />
                     </Grid.Column>
                     <Grid.Column>
                         <SkillGroup
                             header="Less Confortable"
                             content="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+                            skills={this.state.lessComfortableList}
                         />
                     </Grid.Column>
                 </Grid>
