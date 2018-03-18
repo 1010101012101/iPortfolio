@@ -25,26 +25,12 @@ class About extends Component {
             <Container fluid>
                 <Grid centered style={{ marginTop: '13%' }}>
                     <Grid.Row stretched>
-                        <Transition
-                            visible={header}
-                            animation='horizontal flip'
-                            duration={200}
-                            onComplete={this.toggle}>
-                            <Grid.Column width={6} verticalAlign='middle'
-                                style={{ paddingRight: 0 }}>
-                                <Heading />
-                            </Grid.Column>
-                        </Transition>
-                        <Transition
-                            unmountOnHide={true}
-                            visible={content}
-                            animation='slide right'
-                            duration={500}>
-                            <Grid.Column verticalAlign='middle' width={8}
-                                style={{ paddingLeft: 0 }}>
-                                <Content />
-                            </Grid.Column>
-                        </Transition>
+
+                        <Heading />
+
+
+                        <Content />
+
                     </Grid.Row>
 
                 </Grid>

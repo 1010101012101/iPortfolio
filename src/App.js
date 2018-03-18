@@ -11,6 +11,7 @@ import Project from './components/Project/project';
 import Contact from './components/Contact/contact';
 import { Container } from 'semantic-ui-react';
 import InView from './components/InView/inView';
+import Footer from './components/Footer/footer';
 class App extends Component {
   render() {
     return (
@@ -24,6 +25,8 @@ class App extends Component {
         </InView>
         <Skill />
         <Project />
+        <Contact />
+        <Footer />
       </Container>
     );
   }
