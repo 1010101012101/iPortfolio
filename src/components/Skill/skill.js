@@ -16,9 +16,9 @@ class Skill extends Component {
     }
     render() {
         return (
-            <Container fluid style={{ marginTop: '10%' }}>
+            <Container fluid style={{ marginTop: '10%', borderBottom: '2px solid #E0E0E0' }}>
                 <Heading />
-                <Grid centered divided columns={3}>
+                <Grid centered divided columns={3} style={{ marginBottom: '15%' }}>
                     <Grid.Column>
                         <SkillGroup
                             header="More Comfortable"

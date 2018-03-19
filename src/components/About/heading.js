@@ -3,13 +3,15 @@ import { Container, Divider, Segment, Header, Image } from 'semantic-ui-react'
 class AboutHeading extends Component {
     render() {
         return (
-
-            <Container>
-                <Header size='huge' color='red' >
+            <Container fluid>
+                <Header size='huge' color='red' style={{ fontSize: '30px', fontWeight: '900' }} >
                     <Header.Content>
                         About me
-                    <Divider inverted style={{ backgroundColor: '#f44336' }} />
                     </Header.Content>
+                    <Header.Subheader>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                    </Header.Subheader>
+
                 </Header>
                 <Header size='large'>
 

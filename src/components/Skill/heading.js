@@ -31,8 +31,10 @@ class Heading extends Component {
                     style={{ marginTop: '5%' }}>
                     <Header.Content>
                         My Skills
-                        <Divider />
                     </Header.Content>
+                    <Header.Subheader>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                    </Header.Subheader>
                 </Header>
 
                 <Header color='blue' as='h2' textAlign='center'

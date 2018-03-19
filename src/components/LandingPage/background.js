@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Particles from 'react-particles-js'
 import backgroundImage from '../../assets/background.jpg';
-import { Segment, Container } from 'semantic-ui-react';
 
 
 const Background = () => (

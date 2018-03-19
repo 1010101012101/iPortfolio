@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TransitionablePortal, Button, Transition, Segment, Header, Container, Grid, Image } from 'semantic-ui-react';
+import { Divider, Container, Grid } from 'semantic-ui-react';
 import NavBar from '../NavBar/navBar';
 import Heading from './heading';
 import Content from './content';
@@ -17,25 +17,15 @@ class About extends Component {
         this.setState({ header: true });
     }
     render() {
-        let { header, content } = this.state;
-
-
-
         return (
-            <Container fluid>
-                <Grid centered style={{ marginTop: '13%' }}>
+            <Container fluid style={{ borderBottom: '2px solid #E0E0E0' }}>
+                <Grid centered style={{ marginTop: '10%', marginBottom: '10%' }}>
                     <Grid.Row stretched>
-
                         <Heading />
-
-
                         <Content />
-
                     </Grid.Row>
-
                 </Grid>
-
-            </Container >
+            </Container>
         );
     }
 }

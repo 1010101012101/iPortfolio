@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { Container, Grid, Header, Button, Icon } from 'semantic-ui-react';
 const Footer = () => (
-    <Container>
+    <Container fluid style={{ marginTop: '2%', marginBottom: '2%' }}>
         <Grid textAlign='center'>
             <Grid.Row>
                 <Header>
