@@ -75,7 +75,6 @@ class Contact extends Component {
                                                     <Icon name='delete' /> Close
                                                 </Button>
                                             </Button.Group>
-
                                         </Segment>
                                     </Modal.Actions>
                                 </Grid.Row>

@@ -1,13 +1,23 @@
 import React, { Component } from 'react';
 
-import { Container, Grid, Header, Button, Icon } from 'semantic-ui-react';
+import { Segment, Container, Grid, Header, Button, Icon } from 'semantic-ui-react';
+
+import { animateScroll as scroll } from 'react-scroll'
 const Footer = () => (
-    <Container fluid style={{ marginTop: '2%', marginBottom: '2%' }}>
+    <Container fluid style={{ backgroundColor: '#ff7961' }}>
         <Grid textAlign='center'>
             <Grid.Row>
-                <Header>
-                    Lorem ipsum dolor sit amet
+                <Header textAlign='center'>
+                    <Segment basic>
+                        <Icon size='big' onClick={() => scroll.scrollToTop()} link name='home' />
+
+                    </Segment>
+
+                    <Header.Subheader>
+                        Lorem ipsum dolor sit amet
+                    </Header.Subheader>
                 </Header>
+
             </Grid.Row>
             <Grid.Row>
                 <Button.Group size='large'>
@@ -23,7 +33,6 @@ const Footer = () => (
                     <Button className='hvr-wobble-vertical' color='black'>
                         <Icon name='github' /> Github
                     </Button>
-
                 </Button.Group>
             </Grid.Row>
         </Grid>

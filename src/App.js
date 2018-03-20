@@ -27,15 +27,11 @@ class App extends Component {
   }
   render() {
     return (
-      <Container fluid style={{ backgroundColor: '#F5F5F5' }}>
+      <Container fluid style={{ backgroundColor: '#f9f6f3' }}>
         <LandingPage name="landingPage" />
 
         <About name="aboutPage" />
-
-        <Element name="skill">
-          <Skill />
-        </Element>
-
+        <Skill />
         <ProjectList name="projectPage" />
         <Contact name="contactPage" />
         <Footer />
