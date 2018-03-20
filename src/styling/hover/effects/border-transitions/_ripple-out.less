@@ -9,6 +9,7 @@
 	}
 });
 
+
 .ripple-out() {
 	@outerBorderWidth: 1px;
 	@innerBorderWidth: 1px;
@@ -30,5 +31,8 @@
 
 	&:hover:before, {
 		.prefixed(animation-name, ~"@{nameSpace}-ripple-out");
+	}
+	&::hover, {
+		.prefixed(animation-name, ~"@{nameSpace}-ripple-in");
 	}
 }

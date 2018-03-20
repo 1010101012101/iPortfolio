@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import {
+    Transition,
     Container,
     Header,
     Divider,
     Grid
 } from 'semantic-ui-react';
-
+import InView from '../InView/inView';
 import NavBar from '../NavBar/navBar';
 import Heading from './heading';
 import Image from './projectImage';

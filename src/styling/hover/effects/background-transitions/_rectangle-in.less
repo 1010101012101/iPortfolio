@@ -3,7 +3,7 @@
 	.hacks();
 	position: relative;
 	background: @activeColor;
-	.prefixed(transition-property, color);
+	.prefixed(transition-property, width);
 	.prefixed(transition-duration, @mediumDuration);
 
 	&:before {
@@ -25,6 +25,7 @@
 		background: #bdbdbd;
 		font-weight: 900;
 		border-radius: 10px;
+		border: 1px solid black;
 		.prefixed(transition-duration, @mediumDuration);
 		.prefixed(transition-property, transform);
 		.prefixed(transform, scale(1.2));

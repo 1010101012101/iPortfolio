@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {
     Transition,
+    TransitionablePortal,
     Form, Input, TextArea, Modal, Segment, Container, Button, Icon, Grid, Header, Divider
 } from 'semantic-ui-react';
 class Contact extends Component {
@@ -27,7 +28,7 @@ class Contact extends Component {
                 <Button positive className='hvr-rectangle-in' style={{ marginBottom: '5%' }} primary basic size='massive' onClick={this.handleOpen}>
                     Get started
                 </Button>
-                <Transition visible={this.state.open} animation='scale' duration={400} >
+                <TransitionablePortal open={this.state.open} transition={{ animation: 'scale', duration: 400 }}>
                     <Modal
                         open={this.state.open}
                         onClose={this.handleClose}
@@ -81,7 +82,10 @@ class Contact extends Component {
                             </Grid>
                         </Container>
                     </Modal>
-                </Transition>
+                </TransitionablePortal>
+                {/* <TransitionablePortal open={this.state.open} transition={{ animation: 'drop', duration: 400 }}  >
+                   
+                </TransitionablePortal> */}
             </Container>
         );
     }

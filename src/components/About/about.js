@@ -1,21 +1,12 @@
 import React, { Component } from 'react';
-import { Divider, Container, Grid } from 'semantic-ui-react';
+import { Transition, Divider, Container, Grid } from 'semantic-ui-react';
 import NavBar from '../NavBar/navBar';
 import Heading from './heading';
 import Content from './content';
-class About extends Component {
-    // state = { header: true, content: false }
-    // componentWillReceiveProps() {
-    //     let { visible } = this.props;
+import InView from '../InView/inView';
 
-    //     this.setState({
-    //         header: visible,
-    //         content: !visible
-    //     });
-    // }
-    // toggle = () => {
-    //     this.setState({ header: true });
-    // }
+class About extends Component {
+
     render() {
         const header = 'About me';
         const subHeader = ' Lorem ipsum dolor sit amet, consectetur adipiscing elit';

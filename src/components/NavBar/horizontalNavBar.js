@@ -9,13 +9,7 @@ import {
 } from 'semantic-ui-react';
 import * as styles from './navBar.less';
 import { Link, animateScroll as scroll } from 'react-scroll';
-
-
-class NavBar extends Component {
-    state = { isExit: false };
-    componentWillReceiveProps = () => {
-        this.setState({ isExit: !this.props.isInHomePage });
-    }
+class HorizontalNavBar extends Component {
     render() {
         return (
             <Menu borderless
@@ -39,4 +33,4 @@ class NavBar extends Component {
     }
 }
 
-export default NavBar;
+export default HorizontalNavBar;

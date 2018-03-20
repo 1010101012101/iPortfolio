@@ -1,31 +1,43 @@
 import 'styling/semantic.less'
 
 import React, { Component } from 'react';
-
+import {
+  Transition,
+  Menu,
+  Container
+} from 'semantic-ui-react';
 import NavBar from './components/NavBar/navBar';
 import LandingPage from './components/LandingPage/landingPage';
 import Skill from './components/Skill/skill';
 import About from './components/About/about';
 import ProjectList from './components/Project/projectList';
 import Contact from './components/Contact/contact';
-import { Container } from 'semantic-ui-react';
 import InView from './components/InView/inView';
 import Footer from './components/Footer/footer';
 import './App.less'
+import { Element, animateScroll as scroll } from 'react-scroll'
+
 class App extends Component {
+  componentDidMount() {
+    scroll.scrollTo(0, {
+      duration: 1500,
+      smooth: "easeInOutQuint"
+
+    });
+  }
   render() {
     return (
       <Container fluid style={{ backgroundColor: '#F5F5F5' }}>
-        <NavBar />
-        <LandingPage />
-        <InView>
-          {({ isInView }) =>
-            <About visible={isInView} />
-          }
-        </InView>
-        <Skill />
-        <ProjectList />
-        <Contact />
+        <LandingPage name="landingPage" />
+
+        <About name="aboutPage" />
+
+        <Element name="skill">
+          <Skill />
+        </Element>
+
+        <ProjectList name="projectPage" />
+        <Contact name="contactPage" />
         <Footer />
       </Container>
     );
