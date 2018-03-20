@@ -24,16 +24,18 @@ class Contact extends Component {
                     }}>
                     Lorem ipsum dolor sit amet
                 </Header>
-                <Button style={{ marginBottom: '5%' }} primary positive basic size='massive' onClick={this.handleOpen}>
+                <Button positive className='hvr-rectangle-in' style={{ marginBottom: '5%' }} primary basic size='massive' onClick={this.handleOpen}>
                     Get started
-                            </Button>
+                </Button>
                 <Transition visible={this.state.open} animation='scale' duration={400} >
                     <Modal
                         open={this.state.open}
                         onClose={this.handleClose}
+                        closeOnEscape={false}
+                        closeOnRootNodeClick={false}
                         basic
                         size='fullscreen'>
-                        <Container style={{ width: '50%', marginTop: '30%' }}>
+                        <Container fluid style={{ width: '50%', marginTop: '30%' }}>
                             <Header size='huge' inverted textAlign='center'>
                                 <Header.Content>
                                     Lorem ipsum dolor sit amet
@@ -63,9 +65,16 @@ class Contact extends Component {
                                 <Grid.Row textAlign='center'>
                                     <Modal.Actions>
                                         <Segment basic padded='very'>
-                                            <Button size='large' basic positive onClick={this.handleClose} inverted>
-                                                <Icon name='checkmark' /> Submit
-                                        </Button>
+                                            <Button.Group>
+                                                <Button className='hvr-grow' size='large' basic positive onClick={this.handleClose} inverted>
+                                                    <Icon name='checkmark' /> Submit
+                                                </Button>
+                                                <Button.Or />
+                                                <Button className='hvr-shrink' size='large' basic negative onClick={this.handleClose} inverted>
+                                                    <Icon name='delete' /> Close
+                                                </Button>
+                                            </Button.Group>
+
                                         </Segment>
                                     </Modal.Actions>
                                 </Grid.Row>

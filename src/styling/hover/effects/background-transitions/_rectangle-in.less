@@ -14,14 +14,21 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background: @primaryColor;
 		.prefixed(transform, scale(1));
 		.prefixed(transition-property, transform);
 		.prefixed(transition-duration, @mediumDuration);
 		.prefixed(transition-timing-function, ease-out);
 	}
 
-	&:hover,
+	&:hover::before{
+		
+		background: #bdbdbd;
+		font-weight: 900;
+		border-radius: 10px;
+		.prefixed(transition-duration, @mediumDuration);
+		.prefixed(transition-property, transform);
+		.prefixed(transform, scale(1.2));
+	}
 	&:focus,
 	&:active {
 		color: white;

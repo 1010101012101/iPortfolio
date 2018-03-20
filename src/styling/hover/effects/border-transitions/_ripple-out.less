@@ -25,11 +25,10 @@
 		bottom: 0;
 		left: 0;
 		.prefixed(animation-duration, 1s);
+		.prefixed(animation-fill-mode, forwards)
 	}
 
-	&:hover:before,
-	&:focus:before,
-	&:active:before {
-		transition: ~"@{nameSpace}-ripple-out" 1s forwards;
+	&:hover:before, {
+		.prefixed(animation-name, ~"@{nameSpace}-ripple-out");
 	}
 }

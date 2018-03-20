@@ -7,6 +7,7 @@ import {
     Divider,
     Button
 } from 'semantic-ui-react';
+
 const Heading = ({ heading, subHeading, content }) => {
     return (
         <Container fluid>
@@ -23,7 +24,7 @@ const Heading = ({ heading, subHeading, content }) => {
                 <Segment basic size='large'>
                     {content}
                 </Segment>
-                <Button className="hvr-ripple-out" basic size='large' primary style={{ marginTop: '5%', border: 'none' }}>
+                <Button className="hvr-ripple-out" basic size='large' primary style={{ marginTop: '5%' }}>
                     View more..
                 </Button>
             </Segment>

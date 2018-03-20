@@ -9,6 +9,7 @@ import {
 import NavBar from '../NavBar/navBar';
 import Heading from './heading';
 import Image from './projectImage';
+
 class ProjectItem extends Component {
     render() {
         const { position } = this.props;

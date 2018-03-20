@@ -11,7 +11,7 @@ import Contact from './components/Contact/contact';
 import { Container } from 'semantic-ui-react';
 import InView from './components/InView/inView';
 import Footer from './components/Footer/footer';
-
+import './App.less'
 class App extends Component {
   render() {
     return (

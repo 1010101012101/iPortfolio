@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import { Container, Divider, Segment, Header, Image } from 'semantic-ui-react'
 class AboutHeading extends Component {
     render() {
+        const { header, subheader } = this.props;
         return (
             <Container fluid>
                 <Header size='huge' color='red' style={{ fontSize: '30px', fontWeight: '900' }} >
                     <Header.Content>
-                        About me
+                        {header}
                     </Header.Content>
                     <Header.Subheader>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                        {subheader}
                     </Header.Subheader>
 
                 </Header>

@@ -3,7 +3,6 @@ import {
     Container,
     Grid
 } from 'semantic-ui-react';
-import * as styles from './landingPage.less'
 import NavBar from '../NavBar/navBar';
 import Background from './background';
 import Header from './mainHeader';

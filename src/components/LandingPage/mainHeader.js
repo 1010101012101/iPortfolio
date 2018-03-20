@@ -17,10 +17,10 @@ const MainHeader = ({ header, content }) => {
 
                 <Header.Subheader>
                     <Button.Group size='tiny'>
-                        <Button color='linkedin'>
+                        <Button className='hvr-float' color='linkedin'>
                             <Icon name='linkedin' /> LinkedIn
                         </Button>
-                        <Button color='black'>
+                        <Button className='hvr-float' color='black'>
                             <Icon name='github' /> Github
                         </Button>
                     </Button.Group>

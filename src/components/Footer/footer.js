@@ -11,16 +11,16 @@ const Footer = () => (
             </Grid.Row>
             <Grid.Row>
                 <Button.Group size='large'>
-                    <Button color='facebook'>
+                    <Button className='hvr-wobble-vertical' color='facebook'>
                         <Icon name='facebook' /> Facebook
                     </Button>
-                    <Button color='google plus'>
+                    <Button className='hvr-wobble-vertical' color='google plus'>
                         <Icon name='google plus' /> Google Plus
                     </Button>
-                    <Button color='linkedin'>
+                    <Button className='hvr-wobble-vertical' color='linkedin'>
                         <Icon name='linkedin' /> LinkedIn
                     </Button>
-                    <Button color='black'>
+                    <Button className='hvr-wobble-vertical' color='black'>
                         <Icon name='github' /> Github
                     </Button>
 
