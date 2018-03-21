@@ -12,10 +12,6 @@ import { Link, animateScroll as scroll } from 'react-scroll';
 
 
 class NavBar extends Component {
-    state = { isExit: false };
-    componentWillReceiveProps = () => {
-        this.setState({ isExit: !this.props.isInHomePage });
-    }
     render() {
         return (
             <Menu borderless
@@ -24,7 +20,7 @@ class NavBar extends Component {
                 secondary
                 pointing
                 fluid
-                style={{ position: 'relative', position: 'sticky', backgroundColor: 'white' }}>
+                style={{ position: 'absolute', backgroundColor: 'white' }}>
                 <Menu.Menu position='right' style={{ fontWeight: '900' }}>
                     <Menu.Item header onClick={() => scroll.scrollToTop()} >
                         HOME

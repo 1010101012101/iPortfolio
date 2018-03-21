@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {
+    Responsive,
     Container,
     Header,
     Icon,
@@ -17,30 +18,58 @@ class Skill extends Component {
     render() {
         return (
             <Container fluid style={{ marginTop: '10%', borderBottom: '2px solid #E0E0E0' }}>
-                <Heading />
-                <Grid centered divided columns={3} style={{ marginBottom: '15%' }}>
-                    <Grid.Column>
-                        <SkillGroup
-                            header="More Comfortable"
-                            content="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-                            skills={this.state.moreComfortableList}
-                        />
-                    </Grid.Column>
-                    <Grid.Column>
-                        <SkillGroup
-                            header="Comfortable"
-                            content="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-                            skills={this.state.comfortableList}
-                        />
-                    </Grid.Column>
-                    <Grid.Column>
-                        <SkillGroup
-                            header="Less Confortable"
-                            content="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-                            skills={this.state.lessComfortableList}
-                        />
-                    </Grid.Column>
-                </Grid>
+                <Responsive {...Responsive.onlyComputer}>
+                    <Heading />
+                    <Grid centered divided columns={3} style={{ marginBottom: '15%' }}>
+                        <Grid.Column>
+                            <SkillGroup
+                                header="More Comfortable"
+                                content="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+                                skills={this.state.moreComfortableList}
+                            />
+                        </Grid.Column>
+                        <Grid.Column>
+                            <SkillGroup
+                                header="Comfortable"
+                                content="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+                                skills={this.state.comfortableList}
+                            />
+                        </Grid.Column>
+                        <Grid.Column>
+                            <SkillGroup
+                                header="Less Confortable"
+                                content="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+                                skills={this.state.lessComfortableList}
+                            />
+                        </Grid.Column>
+                    </Grid>
+                </Responsive>
+                <Responsive {...Responsive.onlyMobile}>
+                    <Heading />
+                    <Grid centered stackable divided columns={3} style={{ marginBottom: '15%' }}>
+                        <Grid.Column>
+                            <SkillGroup
+                                header="More Comfortable"
+                                content="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+                                skills={this.state.moreComfortableList}
+                            />
+                        </Grid.Column>
+                        <Grid.Column>
+                            <SkillGroup
+                                header="Comfortable"
+                                content="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+                                skills={this.state.comfortableList}
+                            />
+                        </Grid.Column>
+                        <Grid.Column>
+                            <SkillGroup
+                                header="Less Confortable"
+                                content="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+                                skills={this.state.lessComfortableList}
+                            />
+                        </Grid.Column>
+                    </Grid>
+                </Responsive>
             </Container>
         );
     }

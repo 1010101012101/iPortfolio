@@ -7,16 +7,13 @@ import NavBar from '../NavBar/navBar';
 import Background from './background';
 import Header from './mainHeader';
 import NextButton from './nextPageButton';
+import ReponsiveContainer from './responsiveContainer';
 class LandingPage extends Component {
     render() {
-
         return (
-            <Container fluid>
-                <NavBar />
-
+            <ReponsiveContainer>
                 <Background />
-                <Header />
-            </Container>
+            </ReponsiveContainer>
         );
     }
 }

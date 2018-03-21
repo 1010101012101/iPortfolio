@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {
+    Responsive,
     Container,
     Header,
     Icon,
@@ -20,25 +21,50 @@ class SkillGroup extends Component {
         const secondRowItems = this.renderItems(skills.slice(Math.round(skills.length / 2), skills.length));
         return (
             <Container fluid>
-                <Header color='blue' size='large' textAlign='center'>
-                    <Header.Content style={{ marginBottom: '2%' }}>
-                        {this.props.header}
-                    </Header.Content>
-                    <Header.Subheader style={{ marginTop: '2%', marginBottom: '5%' }}>
-                        {this.props.content}
-                    </Header.Subheader>
-                </Header>
-                <Container>
-                    <Grid columns={2} textAlign='center'>
-                        <Grid.Row>
-                            {firstRowItems}
-                        </Grid.Row>
+                <Responsive {...Responsive.onlyComputer}>
+                    <Header color='blue' size='large' textAlign='center'>
+                        <Header.Content style={{ marginBottom: '2%' }}>
+                            {this.props.header}
+                        </Header.Content>
+                        <Header.Subheader style={{ marginTop: '2%', marginBottom: '5%' }}>
+                            {this.props.content}
+                        </Header.Subheader>
+                    </Header>
+                    <Container>
+                        <Grid columns={2} textAlign='center'>
+                            <Grid.Row>
+                                {firstRowItems}
+                            </Grid.Row>
 
-                        <Grid.Row>
-                            {secondRowItems}
-                        </Grid.Row>
-                    </Grid>
-                </Container>
+                            <Grid.Row>
+                                {secondRowItems}
+                            </Grid.Row>
+                        </Grid>
+                    </Container>
+                </Responsive>
+
+
+                <Responsive {...Responsive.onlyMobile}>
+                    <Header color='blue' size='medium' textAlign='center'>
+                        <Header.Content style={{ marginBottom: '2%' }}>
+                            {this.props.header}
+                        </Header.Content>
+                        <Header.Subheader style={{ marginTop: '2%', marginBottom: '5%' }}>
+                            {this.props.content}
+                        </Header.Subheader>
+                    </Header>
+                    <Container>
+                        <Grid columns={2} textAlign='center'>
+                            <Grid.Row>
+                                {firstRowItems}
+                            </Grid.Row>
+
+                            <Grid.Row>
+                                {secondRowItems}
+                            </Grid.Row>
+                        </Grid>
+                    </Container>
+                </Responsive>
             </Container>
         );
     }

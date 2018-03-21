@@ -27,7 +27,7 @@ class App extends Component {
   }
   render() {
     return (
-      <Container fluid style={{ backgroundColor: '#f9f6f3' }}>
+      <Container fluid style={{ display: 'inline-block', backgroundColor: '#f9f6f3' }}>
         <LandingPage name="landingPage" />
 
         <About name="aboutPage" />

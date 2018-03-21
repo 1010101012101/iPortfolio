@@ -10,7 +10,7 @@ import {
     Transition
 } from 'semantic-ui-react'
 
-import NextButton from './nextPageButton';
+
 class MainHeader extends Component {
     state = {
         height: 0,
@@ -20,7 +20,7 @@ class MainHeader extends Component {
 
     updateDimensions = () => {
         this.setState({
-            height: window.innerHeight + 'px',
+            height: window.innerHeight,
             scrollTo: window.innerHeight
         });
     }
@@ -47,56 +47,69 @@ class MainHeader extends Component {
         const content = 'Lorem ipsum dolor sit amet, cum modus insolens ut, nam detraxit cotidieque et, duo modo facete intellegat cu. Explicari complectitur cu pro, suavitate assueverit ne eam. Per in sint mentitum tincidunt.';
         const buttonHeader = 'Ready for more?!';
         const buttonIcon = 'chevron down';
+        let { mobile } = this.props;
         return (
-            <Container fluid style={{ height: this.state.height }} >
+            <Container fluid style={{ display: 'inline-block', height: this.state.height + 5 + 'px', }} >
                 <Grid container>
                     <Transition visible={this.state.visible} animation='fade down' duration={500}>
                         <Grid.Row textAlign='center'
                             style={{
-                                marginTop: '10%',
-                                fontWeight: 'bold'
+                                marginTop: mobile ? '70%' : '30%',
+                                fontWeight: 'bold',
+                                height: mobile ? (this.state.height - 300) + 'px' : (this.state.height - 400) + 'px'
                             }}>
-                            <Segment textAlign='center' basic padded='very' size='massive'>
-                                <Header inverted size='huge' style={{ fontSize: '2.5em' }}>
+                            <Container textAlign='center'>
+                                <Header inverted size='huge' style={{ fontSize: mobile ? '1.7em' : '3.5em' }}>
                                     {header}
+                                    <Header.Subheader>
+                                        <Button.Group size={mobile ? 'mini' : 'tiny'}>
+                                            <Button className='hvr-float-shadow' color='linkedin'>
+                                                <Icon name='linkedin' /> LinkedIn
+                                        </Button>
+                                            <Button className='hvr-float-shadow' color='black'>
+                                                <Icon name='github' /> Github
+                                        </Button>
+                                        </Button.Group>
+                                    </Header.Subheader>
                                 </Header>
 
-                                <Header.Subheader>
-                                    <Button.Group size='tiny'>
-                                        <Button className='hvr-float-shadow' color='linkedin'>
-                                            <Icon name='linkedin' /> LinkedIn
-                        </Button>
-                                        <Button className='hvr-float-shadow' color='black'>
-                                            <Icon name='github' /> Github
-                        </Button>
-                                    </Button.Group>
-                                </Header.Subheader>
 
-                                <Segment basic textAlign='center' padded='very' size='huge'>
-                                    <Header inverted size='medium' textAlign='center' >
+                                <Container style={{ width: mobile ? '100%' : '70%' }}>
+                                    <Header inverted textAlign='center'
+                                        style={{
+                                            fontSize: mobile ? '0.7em' : '1.5em',
+                                            lineHeight: '200%'
+                                        }} >
                                         {content}
+
                                     </Header>
-                                </Segment>
-                            </Segment>
+                                </Container>
+                            </Container>
                         </Grid.Row>
                     </Transition>
                     <Transition visible={this.state.visible} animation='fly up' duration={1000}>
                         <Grid.Row>
                             <Grid.Column textAlign='center'
                                 style={{
-                                    marginTop: '5%',
-                                    fontSize: '1.5em'
+                                    fontSize: mobile ? '0.5em' : '1.5em'
                                 }}>
-                                <Container style={{ position: 'absolute', bottom: 0 }}>
-                                    <Button onClick={this.onScrollToIntro} size='large' inverted basic animated='vertical' style={{ width: '15%' }}>
-                                        <Button.Content hidden>
-                                            {buttonHeader}
-                                        </Button.Content>
+                                <Container textAlign='center' >
 
-                                        <Button.Content visible>
-                                            <Icon size='large' name={buttonIcon} />
-                                        </Button.Content>
-                                    </Button>
+                                    {mobile ?
+                                        <Icon inverted size='big' onClick={this.onScrollToIntro} name={buttonIcon} />
+                                        :
+                                        <Button onClick={this.onScrollToIntro} size='large' inverted basic animated='vertical' style={{ width: '15%' }}>
+                                            <Container fluid>
+                                                <Button.Content hidden>
+                                                    {buttonHeader}
+                                                </Button.Content>
+
+                                                <Button.Content visible>
+                                                    <Icon size='large' name={buttonIcon} />
+                                                </Button.Content>
+                                            </Container>
+                                        </Button>
+                                    }
                                 </Container>
                             </Grid.Column>
                         </Grid.Row>

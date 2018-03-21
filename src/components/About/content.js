@@ -1,14 +1,22 @@
 import React, { Component } from 'react';
-import { Container, Grid, Segment, Header, Button, Icon } from 'semantic-ui-react';
+import { Responsive, Container, Grid, Segment, Header, Button, Icon } from 'semantic-ui-react';
 
 class AboutContent extends Component {
     render() {
         const { content } = this.props;
         return (
-            <Container style={{ width: '50%', lineHeight: '30px', fontSize: '18px' }}>
-                <Segment size='huge' basic >
-                    {content}
-                </Segment>
+            <Container text style={{ lineHeight: '220%' }}>
+                <Responsive {...Responsive.onlyComputer}>
+                    <Segment size='huge' basic >
+                        {content}
+                    </Segment>
+                </Responsive>
+                <Responsive {...Responsive.onlyMobile}>
+                    <Segment size='small' basic >
+                        {content}
+                    </Segment>
+                </Responsive>
+
             </Container>
 
         );

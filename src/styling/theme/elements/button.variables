@@ -3,3 +3,5 @@
 *******************************/
 
 @basicColoredBorderSize: 0px;
+@mini: 0.4rem;
+@tiny: 0.6rem;

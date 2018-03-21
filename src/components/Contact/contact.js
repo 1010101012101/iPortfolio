@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {
+    Responsive,
     Transition,
     TransitionablePortal,
     Form, Input, TextArea, Modal, Segment, Container, Button, Icon, Grid, Header, Divider
@@ -12,79 +13,153 @@ class Contact extends Component {
     render() {
         return (
             <Container fluid textAlign='center' style={{ marginTop: '5%', borderBottom: '2px solid #E0E0E0' }}>
-                <Header color='red' size='huge' textAlign='center'
-                    style={{ marginTop: '5%' }}>
-                    <Header.Content>
-                        Lorem ipsum dolor
+                <Responsive {...Responsive.onlyComputer}>
+                    <Header color='red' size='huge' textAlign='center'
+                        style={{ marginTop: '5%' }}>
+                        <Header.Content>
+                            Lorem ipsum dolor
                     </Header.Content>
+                    </Header>
+                    <Header color='blue' size='large' textAlign='center'
+                        style={{
+                            marginTop: '2%',
+                            marginBottom: '5%'
+                        }}>
+                        Lorem ipsum dolor sit amet
                 </Header>
-                <Header color='blue' size='large' textAlign='center'
-                    style={{
-                        marginTop: '2%',
-                        marginBottom: '5%'
-                    }}>
-                    Lorem ipsum dolor sit amet
-                </Header>
-                <Button positive className='hvr-rectangle-in' style={{ marginBottom: '5%' }} primary basic size='massive' onClick={this.handleOpen}>
-                    Get started
+                    <Button positive className='hvr-rectangle-in' style={{ marginBottom: '5%' }} primary basic size='massive' onClick={this.handleOpen}>
+                        Get started
                 </Button>
-                <TransitionablePortal open={this.state.open} transition={{ animation: 'scale', duration: 400 }}>
-                    <Modal
-                        open={this.state.open}
-                        onClose={this.handleClose}
-                        closeOnEscape={false}
-                        closeOnRootNodeClick={false}
-                        basic
-                        size='fullscreen'>
-                        <Container fluid style={{ width: '50%', marginTop: '30%' }}>
-                            <Header size='huge' inverted textAlign='center'>
-                                <Header.Content>
-                                    Lorem ipsum dolor sit amet
+                    <TransitionablePortal open={this.state.open} transition={{ animation: 'scale', duration: 400 }}>
+                        <Modal
+                            open={this.state.open}
+                            onClose={this.handleClose}
+                            closeOnEscape={false}
+                            closeOnRootNodeClick={false}
+                            basic
+                            size='fullscreen'>
+                            <Container fluid style={{ width: '50%', marginTop: '30%' }}>
+                                <Header size='huge' inverted textAlign='center'>
+                                    <Header.Content>
+                                        Lorem ipsum dolor sit amet
                                     </Header.Content>
-                                <Header.Subheader>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    <Header.Subheader>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                     </Header.Subheader>
-                            </Header>
-                            <Grid textAlign='center' style={{ marginTop: '15%' }}>
-                                <Grid.Row verticalAlign='middle'>
-                                    <Grid.Column>
-                                        <Modal.Content>
-                                            <Form inverted>
-                                                <Segment basic>
-                                                    <Form.Input fluid placeholder='Name' />
-                                                </Segment>
-                                                <Segment basic>
-                                                    <Form.Input fluid placeholder='Email' />
-                                                </Segment>
-                                                <Segment basic>
-                                                    <Form.TextArea placeholder='Message' />
-                                                </Segment>
-                                            </Form>
-                                        </Modal.Content>
-                                    </Grid.Column>
-                                </Grid.Row>
-                                <Grid.Row textAlign='center'>
-                                    <Modal.Actions>
-                                        <Segment basic padded='very'>
-                                            <Button.Group>
-                                                <Button className='hvr-grow' size='large' basic positive onClick={this.handleClose} inverted>
-                                                    <Icon name='checkmark' /> Submit
+                                </Header>
+                                <Grid textAlign='center' style={{ marginTop: '15%' }}>
+                                    <Grid.Row verticalAlign='middle'>
+                                        <Grid.Column>
+                                            <Modal.Content>
+                                                <Form inverted>
+                                                    <Segment basic>
+                                                        <Form.Input fluid placeholder='Name' />
+                                                    </Segment>
+                                                    <Segment basic>
+                                                        <Form.Input fluid placeholder='Email' />
+                                                    </Segment>
+                                                    <Segment basic>
+                                                        <Form.TextArea placeholder='Message' />
+                                                    </Segment>
+                                                </Form>
+                                            </Modal.Content>
+                                        </Grid.Column>
+                                    </Grid.Row>
+                                    <Grid.Row textAlign='center'>
+                                        <Modal.Actions>
+                                            <Segment basic padded='very'>
+                                                <Button.Group>
+                                                    <Button className='hvr-grow' size='large' basic positive onClick={this.handleClose} inverted>
+                                                        <Icon name='checkmark' /> Submit
                                                 </Button>
-                                                <Button.Or />
-                                                <Button className='hvr-shrink' size='large' basic negative onClick={this.handleClose} inverted>
-                                                    <Icon name='delete' /> Close
+                                                    <Button.Or />
+                                                    <Button className='hvr-shrink' size='large' basic negative onClick={this.handleClose} inverted>
+                                                        <Icon name='delete' /> Close
                                                 </Button>
-                                            </Button.Group>
-                                        </Segment>
-                                    </Modal.Actions>
-                                </Grid.Row>
-                            </Grid>
-                        </Container>
-                    </Modal>
-                </TransitionablePortal>
-                {/* <TransitionablePortal open={this.state.open} transition={{ animation: 'drop', duration: 400 }}  >
-                   
-                </TransitionablePortal> */}
+                                                </Button.Group>
+                                            </Segment>
+                                        </Modal.Actions>
+                                    </Grid.Row>
+                                </Grid>
+                            </Container>
+                        </Modal>
+                    </TransitionablePortal>
+                </Responsive>
+
+
+
+                <Responsive {...Responsive.onlyMobile}>
+                    <Header color='red' size='large' textAlign='center'
+                        style={{ marginTop: '5%' }}>
+                        <Header.Content>
+                            Lorem ipsum dolor
+                    </Header.Content>
+                    </Header>
+                    <Header color='blue' size='medium' textAlign='center'
+                        style={{
+                            marginTop: '2%',
+                            marginBottom: '5%'
+                        }}>
+                        Lorem ipsum dolor sit amet
+                </Header>
+                    <Button positive className='hvr-rectangle-in' style={{ marginBottom: '5%' }} primary basic size='large' onClick={this.handleOpen}>
+                        Get started
+                </Button>
+                    <TransitionablePortal open={this.state.open} transition={{ animation: 'scale', duration: 400 }}>
+                        <Modal
+                            open={this.state.open}
+                            onClose={this.handleClose}
+                            closeOnEscape={false}
+                            closeOnRootNodeClick={false}
+                            basic
+                            size='fullscreen'>
+                            <Container fluid style={{ width: '50%', marginTop: '30%' }}>
+                                <Header size='huge' inverted textAlign='center'>
+                                    <Header.Content>
+                                        Lorem ipsum dolor sit amet
+                                    </Header.Content>
+                                    <Header.Subheader>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    </Header.Subheader>
+                                </Header>
+                                <Grid textAlign='center' style={{ marginTop: '15%' }}>
+                                    <Grid.Row verticalAlign='middle'>
+                                        <Grid.Column>
+                                            <Modal.Content>
+                                                <Form inverted>
+                                                    <Segment basic>
+                                                        <Form.Input fluid placeholder='Name' />
+                                                    </Segment>
+                                                    <Segment basic>
+                                                        <Form.Input fluid placeholder='Email' />
+                                                    </Segment>
+                                                    <Segment basic>
+                                                        <Form.TextArea placeholder='Message' />
+                                                    </Segment>
+                                                </Form>
+                                            </Modal.Content>
+                                        </Grid.Column>
+                                    </Grid.Row>
+                                    <Grid.Row textAlign='center'>
+                                        <Modal.Actions>
+                                            <Segment basic padded='very'>
+                                                <Button.Group>
+                                                    <Button className='hvr-grow' size='large' basic positive onClick={this.handleClose} inverted>
+                                                        <Icon name='checkmark' /> Submit
+                                                </Button>
+                                                    <Button.Or />
+                                                    <Button className='hvr-shrink' size='large' basic negative onClick={this.handleClose} inverted>
+                                                        <Icon name='delete' /> Close
+                                                </Button>
+                                                </Button.Group>
+                                            </Segment>
+                                        </Modal.Actions>
+                                    </Grid.Row>
+                                </Grid>
+                            </Container>
+                        </Modal>
+                    </TransitionablePortal>
+                </Responsive>
             </Container>
         );
     }

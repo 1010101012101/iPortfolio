@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Divider, Container, Header } from 'semantic-ui-react';
+import { Responsive, Divider, Container, Header } from 'semantic-ui-react';
 import Typist from 'react-typist';
 class Heading extends Component {
 
@@ -27,41 +27,83 @@ class Heading extends Component {
 
         return (
             <Container fluid>
-                <Header color='red' size='huge' textAlign='center'
-                    style={{ marginTop: '5%' }}>
-                    <Header.Content>
-                        My Skills
+                <Responsive {...Responsive.onlyComputer}>
+                    <Header color='red' size='huge' textAlign='center'
+                        style={{ marginTop: '5%' }}>
+                        <Header.Content>
+                            My Skills
                     </Header.Content>
-                    <Header.Subheader>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                        <Header.Subheader>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit
                     </Header.Subheader>
-                </Header>
+                    </Header>
 
-                <Header color='blue' as='h2' textAlign='center'
-                    style={{
-                        marginTop: '2%',
-                        marginBottom: '5%'
-                    }}>
-                    Lorem ipsum dolor&nbsp;
+
+                    <Header color='blue' size='huge' textAlign='center'
+                        style={{
+                            marginTop: '7%',
+                            marginBottom: '5%'
+                        }}>
+                        Lorem ipsum dolor&nbsp;
                     <Header.Content>
-                        {typing ?
-                            <Typist
-                                avgTypingSpeed={20}
-                                onTypingDone={this.onTypingComplete}>
-                                <Typist.Delay ms={250} />
-                                <span
-                                    style={{ color: 'red', textDecoration: 'underline' }}>
-                                    {message}
-                                </span>
-                                <Typist.Backspace count={message.length} delay={2000} />
-                                <Typist.Delay ms={500} />
-                            </Typist> : ''}
+                            {typing ?
+                                <Typist
+                                    avgTypingSpeed={20}
+                                    onTypingDone={this.onTypingComplete}>
+                                    <Typist.Delay ms={250} />
+                                    <span
+                                        style={{ color: 'red', textDecoration: 'underline' }}>
+                                        {message}
+                                    </span>
+                                    <Typist.Backspace count={message.length} delay={2000} />
+                                    <Typist.Delay ms={500} />
+                                </Typist> : ''}
 
 
+                        </Header.Content>
+
+
+                    </Header>
+                </Responsive>
+
+                <Responsive {...Responsive.onlyMobile}>
+                    <Header color='red' size='large' textAlign='center'
+                        style={{ marginTop: '5%' }}>
+                        <Header.Content>
+                            My Skills
                     </Header.Content>
+                        <Header.Subheader>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                    </Header.Subheader>
+                    </Header>
 
 
-                </Header>
+                    <Header color='blue' size='medium' textAlign='center'
+                        style={{
+                            marginTop: '2%',
+                            marginBottom: '5%'
+                        }}>
+                        Lorem ipsum dolor&nbsp;
+                    <Header.Content>
+                            {typing ?
+                                <Typist
+                                    avgTypingSpeed={20}
+                                    onTypingDone={this.onTypingComplete}>
+                                    <Typist.Delay ms={250} />
+                                    <span
+                                        style={{ color: 'red', textDecoration: 'underline' }}>
+                                        {message}
+                                    </span>
+                                    <Typist.Backspace count={message.length} delay={2000} />
+                                    <Typist.Delay ms={500} />
+                                </Typist> : ''}
+
+
+                        </Header.Content>
+
+
+                    </Header>
+                </Responsive>
             </Container>
         );
     }

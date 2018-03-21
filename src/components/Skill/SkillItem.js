@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {
+    Responsive,
     Container,
     Header,
     Icon
@@ -11,12 +12,22 @@ class SkillItem extends Component {
 
         return (
             <Container fluid>
-                <Header size='small' icon>
-                    <Icon name={this.props.icon} />
-                    <Header.Content>
-                        {this.props.header}
-                    </Header.Content>
-                </Header>
+                <Responsive {...Responsive.onlyComputer}>
+                    <Header size='small' icon>
+                        <Icon name={this.props.icon} />
+                        <Header.Content>
+                            {this.props.header}
+                        </Header.Content>
+                    </Header>
+                </Responsive>
+                <Responsive {...Responsive.onlyMobile}>
+                    <Header size='tiny' icon>
+                        <Icon name={this.props.icon} />
+                        <Header.Content>
+                            {this.props.header}
+                        </Header.Content>
+                    </Header>
+                </Responsive>
             </Container>
         );
     }
