@@ -5,7 +5,7 @@ import DesktopContainer from './desktopContainer';
 import MobileContainer from './mobileContainer';
 
 const ResponsiveContainer = ({ children }) => (
-    <Container fluid>
+    <Container fluid style={{ display: 'table-header-group' }}>
         <DesktopContainer>{children}</DesktopContainer>
         <MobileContainer>{children}</MobileContainer>
     </Container>
