@@ -6,7 +6,6 @@ import {
   Menu,
   Container
 } from 'semantic-ui-react';
-import NavBar from './components/NavBar/navBar';
 import LandingPage from './components/LandingPage/landingPage';
 import Skill from './components/Skill/skill';
 import About from './components/About/about';
@@ -27,7 +26,7 @@ class App extends Component {
   }
   render() {
     return (
-      <Container fluid style={{ display: 'inline-block', backgroundColor: '#f9f6f3' }}>
+      <Container fluid style={{display: 'table-cell', backgroundColor: '#f9f6f3' }}>
         <LandingPage name="landingPage" />
 
         <About name="aboutPage" />

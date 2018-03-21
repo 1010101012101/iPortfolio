@@ -112,8 +112,8 @@ class Contact extends Component {
                             closeOnEscape={false}
                             closeOnRootNodeClick={false}
                             basic
-                            size='fullscreen'>
-                            <Container fluid style={{ width: '50%', marginTop: '30%' }}>
+                            size='fullscreen' style={{ marginTop: '40%' }}>
+                            <Container fluid style={{ width: '50%' }}>
                                 <Header size='huge' inverted textAlign='center'>
                                     <Header.Content>
                                         Lorem ipsum dolor sit amet
@@ -160,7 +160,7 @@ class Contact extends Component {
                         </Modal>
                     </TransitionablePortal>
                 </Responsive>
-            </Container>
+            </Container >
         );
     }
 }

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Transition, Divider, Container, Grid } from 'semantic-ui-react';
-import NavBar from '../NavBar/navBar';
 import Heading from './heading';
 import Content from './content';
 import InView from '../InView/inView';

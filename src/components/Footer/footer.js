@@ -4,7 +4,7 @@ import { Responsive, Segment, Container, Grid, Header, Button, Icon } from 'sema
 
 import { animateScroll as scroll } from 'react-scroll'
 const Footer = () => (
-    <Container fluid style={{ backgroundColor: '#ff7961' }}>
+    <Container fluid style={{ width: '100%', backgroundColor: '#ff7961' }}>
         <Responsive {...Responsive.onlyComputer}>
             <Grid textAlign='center'>
                 <Grid.Row>
@@ -40,7 +40,7 @@ const Footer = () => (
         </Responsive>
 
         <Responsive {...Responsive.onlyMobile}>
-            <Grid stackable textAlign='center'>
+            <Grid container textAlign='center' verticalAlign='middle'>
                 <Grid.Row>
                     <Header size='medium' textAlign='center'>
                         <Header.Content>
@@ -51,9 +51,6 @@ const Footer = () => (
                             Lorem ipsum dolor sit amet
                     </Header.Subheader>
                     </Header>
-
-                </Grid.Row>
-                <Grid.Row>
                     <Button.Group size='tiny'>
                         <Button className='hvr-wobble-vertical' color='facebook'>
                             <Icon name='facebook' /> Facebook
@@ -68,6 +65,7 @@ const Footer = () => (
                             <Icon name='github' /> Github
                     </Button>
                     </Button.Group>
+
                 </Grid.Row>
             </Grid>
         </Responsive>

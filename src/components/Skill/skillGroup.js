@@ -6,7 +6,6 @@ import {
     Icon,
     Grid
 } from 'semantic-ui-react';
-import NavBar from '../NavBar/navBar';
 import SkillItem from './SkillItem';
 class SkillGroup extends Component {
     renderItems = (skillsItem) =>

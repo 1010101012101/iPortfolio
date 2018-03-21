@@ -7,11 +7,10 @@ import {
     Icon,
     Image
 } from 'semantic-ui-react';
-import * as styles from './navBar.less';
 import { Link, animateScroll as scroll } from 'react-scroll';
 
 
-class NavBar extends Component {
+class DesktopNavBar extends Component {
     render() {
         return (
             <Menu borderless
@@ -29,10 +28,8 @@ class NavBar extends Component {
                     <Menu.Item header onClick={() => scroll.scrollToBottom()}>CONTACT</Menu.Item>
                 </Menu.Menu>
             </Menu>
-
-
         );
     }
 }
 
-export default NavBar;
+export default DesktopNavBar;

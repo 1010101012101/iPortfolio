@@ -15,7 +15,7 @@ import {
     Sidebar,
     Visibility,
 } from 'semantic-ui-react'
-import NavBar from '../NavBar/navBar';
+import NavBar from '../NavBar/desktopNavBar';
 import MainHeading from './mainHeader';
 
 export default class DesktopContainer extends Component {
@@ -33,11 +33,8 @@ export default class DesktopContainer extends Component {
                 <Visibility once={false} onBottomPassed={this.showFixedMenu} onBottomPassedReverse={this.hideFixedMenu}>
                     <NavBar />
                 </Visibility>
-
                 {children}
                 <MainHeading />
-
-
             </Responsive>
         )
     }
