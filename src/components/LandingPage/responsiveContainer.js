@@ -5,10 +5,10 @@ import DesktopContainer from './desktopContainer';
 import MobileContainer from './mobileContainer';
 
 const ResponsiveContainer = ({ children }) => (
-    <Container fluid style={{ display: 'table-header-group' }}>
+    <React.Fragment>
         <DesktopContainer>{children}</DesktopContainer>
-        <MobileContainer>{children}</MobileContainer>
-    </Container>
+        <MobileContainer style={{ display: 'table-row-group' }}>{children}</MobileContainer>
+    </React.Fragment>
 )
 
 ResponsiveContainer.propTypes = {

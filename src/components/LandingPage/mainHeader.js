@@ -5,10 +5,11 @@ import {
     Container,
     Segment,
     Header,
+    Image,
     Button,
     Icon,
     Transition
-} from 'semantic-ui-react'
+} from 'semantic-ui-react';
 
 
 class MainHeader extends Component {
@@ -99,15 +100,14 @@ class MainHeader extends Component {
                                         <Icon inverted size='big' onClick={this.onScrollToIntro} name={buttonIcon} />
                                         :
                                         <Button onClick={this.onScrollToIntro} size='large' inverted basic animated='vertical' style={{ width: '15%' }}>
-                                            <Container fluid>
-                                                <Button.Content hidden>
-                                                    {buttonHeader}
-                                                </Button.Content>
 
-                                                <Button.Content visible>
-                                                    <Icon size='large' name={buttonIcon} />
-                                                </Button.Content>
-                                            </Container>
+                                            <Button.Content hidden>
+                                                {buttonHeader}
+                                            </Button.Content>
+
+                                            <Button.Content visible>
+                                                <Icon size='large' name={buttonIcon} />
+                                            </Button.Content>
                                         </Button>
                                     }
                                 </Container>

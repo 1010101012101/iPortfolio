@@ -30,11 +30,10 @@ class Contact extends Component {
                     <Button positive className='hvr-rectangle-in' style={{ marginBottom: '5%' }} primary basic size='massive' onClick={this.handleOpen}>
                         Get started
                 </Button>
-                    <TransitionablePortal open={this.state.open} transition={{ animation: 'scale', duration: 400 }}>
+                    {/* NOTE: maybe modal get called to close before transition get called so the there is no close animation */}
+                    <Transition visible={this.state.open} animation='scale' duration={400}>
                         <Modal
                             open={this.state.open}
-                            onClose={this.handleClose}
-                            closeOnEscape={false}
                             closeOnRootNodeClick={false}
                             basic
                             size='fullscreen'>
@@ -83,7 +82,7 @@ class Contact extends Component {
                                 </Grid>
                             </Container>
                         </Modal>
-                    </TransitionablePortal>
+                    </Transition>
                 </Responsive>
 
 
@@ -105,7 +104,7 @@ class Contact extends Component {
                     <Button positive className='hvr-rectangle-in' style={{ marginBottom: '5%' }} primary basic size='large' onClick={this.handleOpen}>
                         Get started
                 </Button>
-                    <TransitionablePortal open={this.state.open} transition={{ animation: 'scale', duration: 400 }}>
+                    <TransitionablePortal onClose={this.handleClose} open={this.state.open} transition={{ animation: 'scale', duration: 400 }}>
                         <Modal
                             open={this.state.open}
                             onClose={this.handleClose}

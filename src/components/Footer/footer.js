@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
 
-import { Responsive, Segment, Container, Grid, Header, Button, Icon } from 'semantic-ui-react';
+import { Image, Responsive, Segment, Container, Grid, Header, Button, Icon } from 'semantic-ui-react';
 
-import { animateScroll as scroll } from 'react-scroll'
+import { animateScroll as scroll } from 'react-scroll';
+
+import logoImage from '../../assets/logo.png';
 const Footer = () => (
     <Container fluid style={{ width: '100%', backgroundColor: '#ff7961' }}>
         <Responsive {...Responsive.onlyComputer}>
             <Grid textAlign='center'>
                 <Grid.Row>
                     <Header textAlign='center'>
-                        <Segment basic>
-                            <Icon size='big' onClick={() => scroll.scrollToTop()} link name='home' />
-
-                        </Segment>
+                        <Image style={{ marginBottom: '5%' }} src={logoImage} size='huge' onClick={() => scroll.scrollToTop()} />
 
                         <Header.Subheader>
                             Lorem ipsum dolor sit amet
@@ -44,7 +43,7 @@ const Footer = () => (
                 <Grid.Row>
                     <Header size='medium' textAlign='center'>
                         <Header.Content>
-                            <Icon size='medium' onClick={() => scroll.scrollToTop()} link name='home' />
+                            <Icon size='small' onClick={() => scroll.scrollToTop()} link name='home' />
                         </Header.Content>
 
                         <Header.Subheader>
