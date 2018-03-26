@@ -3,7 +3,8 @@ import {
     Responsive,
     Container,
     Header,
-    Icon
+    Icon,
+    Image
 } from 'semantic-ui-react';
 
 class SkillItem extends Component {
@@ -14,7 +15,7 @@ class SkillItem extends Component {
             <Container fluid>
                 <Responsive {...Responsive.onlyComputer}>
                     <Header size='small' icon>
-                        <Icon name={this.props.icon} />
+                        <i className={icon} style={{ fontSize: '5em' }}></i>
                         <Header.Content>
                             {this.props.header}
                         </Header.Content>
@@ -22,7 +23,7 @@ class SkillItem extends Component {
                 </Responsive>
                 <Responsive {...Responsive.onlyMobile}>
                     <Header size='tiny' icon>
-                        <Icon name={this.props.icon} />
+                        <i className={icon} style={{ fontSize: '4em' }}></i>
                         <Header.Content>
                             {this.props.header}
                         </Header.Content>

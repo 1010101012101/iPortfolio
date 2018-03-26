@@ -15,8 +15,8 @@ class MobileNavBar extends Component {
         return (
             <Sidebar as={Menu} animation='slide along' width='thin' inverted vertical visible={sidebarOpened}>
                 <Menu.Item header onClick={() => scroll.scrollToTop()} >HOME</Menu.Item>
-                <Menu.Item header href='/resume'>RESUME</Menu.Item>
                 <Menu.Item header onClick={() => scroll.scrollToBottom()}>CONTACT</Menu.Item>
+                <Menu.Item header href="src/assets/resume.pdf">RESUME</Menu.Item>
             </Sidebar>
         );
     }

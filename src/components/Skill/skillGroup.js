@@ -30,7 +30,7 @@ class SkillGroup extends Component {
                         </Header.Subheader>
                     </Header>
                     <Container>
-                        <Grid columns={2} textAlign='center'>
+                        <Grid columns={3} textAlign='center'>
                             <Grid.Row>
                                 {firstRowItems}
                             </Grid.Row>
@@ -53,7 +53,7 @@ class SkillGroup extends Component {
                         </Header.Subheader>
                     </Header>
                     <Container>
-                        <Grid columns={2} textAlign='center'>
+                        <Grid columns={3} textAlign='center'>
                             <Grid.Row>
                                 {firstRowItems}
                             </Grid.Row>

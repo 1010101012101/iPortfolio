@@ -11,26 +11,26 @@ const Footer = () => (
             <Grid textAlign='center'>
                 <Grid.Row>
                     <Header textAlign='center'>
-                        <Image style={{ marginBottom: '5%' }} src={logoImage} size='huge' onClick={() => scroll.scrollToTop()} />
+                        <Image href="#" style={{ marginBottom: '5%' }} src={logoImage} size='huge' onClick={() => scroll.scrollToTop()} />
 
                         <Header.Subheader>
-                            Lorem ipsum dolor sit amet
+                            Handmade by me - Khang Tran &copy; 2018
                     </Header.Subheader>
                     </Header>
 
                 </Grid.Row>
                 <Grid.Row>
                     <Button.Group size='large'>
-                        <Button className='hvr-wobble-vertical' color='facebook'>
+                        <Button as='a' href='https://www.facebook.com/khangishere' target='_blank' className='hvr-wobble-vertical' color='facebook'>
                             <Icon name='facebook' /> Facebook
                     </Button>
-                        <Button className='hvr-wobble-vertical' color='google plus'>
-                            <Icon name='google plus' /> Google Plus
+                        <Button as='a' href='mailto:cktran16x2@gmail.com' className='hvr-wobble-vertical' color='google plus'>
+                            <Icon name='mail' /> Email
                     </Button>
-                        <Button className='hvr-wobble-vertical' color='linkedin'>
+                        <Button as='a' href='https://www.linkedin.com/in/khangtranx/' target='_blank' className='hvr-wobble-vertical' color='linkedin'>
                             <Icon name='linkedin' /> LinkedIn
                     </Button>
-                        <Button className='hvr-wobble-vertical' color='black'>
+                        <Button as='a' href='http://github.com/Khang-Tran' target='_blank' className='hvr-wobble-vertical' color='black'>
                             <Icon name='github' /> Github
                     </Button>
                     </Button.Group>
@@ -51,16 +51,16 @@ const Footer = () => (
                     </Header.Subheader>
                     </Header>
                     <Button.Group size='tiny'>
-                        <Button className='hvr-wobble-vertical' color='facebook'>
+                        <Button as='a' href='https://www.facebook.com/khangishere' target='_blank' className='hvr-wobble-vertical' color='facebook'>
                             <Icon name='facebook' /> Facebook
                     </Button>
-                        <Button className='hvr-wobble-vertical' color='google plus'>
+                        <Button as='a' href='https://plus.google.com/105861925169691513017' className='hvr-wobble-vertical' color='google plus'>
                             <Icon name='google plus' /> Google Plus
                     </Button>
-                        <Button className='hvr-wobble-vertical' color='linkedin'>
+                        <Button as='a' href='https://www.linkedin.com/in/khangtranx/' target='_blank' className='hvr-wobble-vertical' color='linkedin'>
                             <Icon name='linkedin' /> LinkedIn
                     </Button>
-                        <Button className='hvr-wobble-vertical' color='black'>
+                        <Button as='a' href='http://github.com/Khang-Tran' target='_blank' className='hvr-wobble-vertical' color='black'>
                             <Icon name='github' /> Github
                     </Button>
                     </Button.Group>

@@ -5,15 +5,15 @@ class Heading extends Component {
 
 
     state = {
-        message: 'this is random message',
+        message: ' ',
         typing: true
     };
 
 
     onTypingComplete = () => {
-        var skills = ['C#', 'C++', 'Javascript', 'ASP.NET', 'ASP.NET Core', 'Node.js', 'React', 'Angular'];
+        let skills = ['C#', 'C++', 'JavaScript', 'HTML/CSS', 'ASP.NET Core', 'Node.js', 'React', 'Angular', 'ASP.NET MVC 5', 'Oracle', 'SQL Server', 'Entity Framework', 'PostgresSQL', 'WPF', 'MongoDB'];
 
-        var newMessage = skills[Math.floor(Math.random() * skills.length)];
+        let newMessage = skills[Math.floor((Math.random() * skills.length))];
 
         this.setState({
             message: newMessage
@@ -29,12 +29,12 @@ class Heading extends Component {
             <Container fluid>
                 <Responsive {...Responsive.onlyComputer}>
                     <Header color='red' size='huge' textAlign='center'
-                        style={{ marginTop: '5%' }}>
+                        style={{ fontSize: '30px', fontWeight: '900' }}>
                         <Header.Content>
                             My Skills
                     </Header.Content>
                         <Header.Subheader>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                            Let's learn more about my expertise!.
                     </Header.Subheader>
                     </Header>
 
@@ -44,13 +44,14 @@ class Heading extends Component {
                             marginTop: '7%',
                             marginBottom: '5%'
                         }}>
-                        Lorem ipsum dolor&nbsp;
+                        I have worked with
                     <Header.Content>
                             {typing ?
                                 <Typist
                                     avgTypingSpeed={20}
                                     onTypingDone={this.onTypingComplete}>
                                     <Typist.Delay ms={250} />
+                                    &nbsp;
                                     <span
                                         style={{ color: 'red', textDecoration: 'underline' }}>
                                         {message}
@@ -73,7 +74,7 @@ class Heading extends Component {
                             My Skills
                     </Header.Content>
                         <Header.Subheader>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                            Let's learn more about my expertise!.
                     </Header.Subheader>
                     </Header>
 
@@ -83,13 +84,14 @@ class Heading extends Component {
                             marginTop: '2%',
                             marginBottom: '5%'
                         }}>
-                        Lorem ipsum dolor&nbsp;
+                        I have worked with
                     <Header.Content>
                             {typing ?
                                 <Typist
                                     avgTypingSpeed={20}
                                     onTypingDone={this.onTypingComplete}>
                                     <Typist.Delay ms={250} />
+                                    &nbsp;
                                     <span
                                         style={{ color: 'red', textDecoration: 'underline' }}>
                                         {message}

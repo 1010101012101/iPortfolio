@@ -44,8 +44,8 @@ class MainHeader extends Component {
         });
     }
     render() {
-        const header = 'Khang Tran';
-        const content = 'Lorem ipsum dolor sit amet, cum modus insolens ut, nam detraxit cotidieque et, duo modo facete intellegat cu. Explicari complectitur cu pro, suavitate assueverit ne eam. Per in sint mentitum tincidunt.';
+        const header = 'Hi, I\'m Khang';
+        const content = 'A curious, decisive, goal-oriented Web Developer who work hard every day to contribute and change the world.';
         const buttonHeader = 'Ready for more?!';
         const buttonIcon = 'chevron down';
         let { mobile } = this.props;
@@ -64,10 +64,10 @@ class MainHeader extends Component {
                                     {header}
                                     <Header.Subheader>
                                         <Button.Group size={mobile ? 'mini' : 'tiny'}>
-                                            <Button className='hvr-float-shadow' color='linkedin'>
-                                                <Icon name='linkedin' /> LinkedIn
+                                            <Button as='a' href='https://www.linkedin.com/in/khangtranx/' target='_blank' className='hvr-float-shadow' color='linkedin'>
+                                                <Icon link name='linkedin' /> LinkedIn
                                         </Button>
-                                            <Button className='hvr-float-shadow' color='black'>
+                                            <Button as='a' href='http://github.com/Khang-Tran' target='_blank' className='hvr-float-shadow' color='black'>
                                                 <Icon name='github' /> Github
                                         </Button>
                                         </Button.Group>
@@ -116,7 +116,7 @@ class MainHeader extends Component {
                     </Transition>
                 </Grid>
 
-            </Container>
+            </Container >
         );
     }
 }

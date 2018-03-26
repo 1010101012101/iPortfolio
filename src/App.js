@@ -26,7 +26,7 @@ class App extends Component {
   }
   render() {
     return (
-      <Container fluid style={{display: 'table-cell', backgroundColor: '#f9f6f3' }}>
+      <Container fluid style={{ display: 'table-cell', backgroundColor: '#f9f6f3' }}>
         <LandingPage name="landingPage" />
 
         <About name="aboutPage" />

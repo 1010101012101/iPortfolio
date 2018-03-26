@@ -9,3 +9,4 @@
 @black: #212121;
 @primaryColor   : @red;
 @secondaryColor : @blue;
+@fontName          : 'Open Sans';

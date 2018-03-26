@@ -11,7 +11,6 @@ import { Link, animateScroll as scroll } from 'react-scroll';
 
 import logoImage from '../../assets/logo.png';
 
-
 class DesktopNavBar extends Component {
     render() {
         return (
@@ -29,8 +28,8 @@ class DesktopNavBar extends Component {
                     <Menu.Item header onClick={() => scroll.scrollToTop()} >
                         HOME
                     </Menu.Item>
-                    <Menu.Item header href='/resume'>RESUME</Menu.Item>
                     <Menu.Item header onClick={() => scroll.scrollToBottom()}>CONTACT</Menu.Item>
+                    <Menu.Item header href="src/assets/resume.pdf" download="resume.pdf">RESUME</Menu.Item>
                 </Menu.Menu>
             </Menu>
         );

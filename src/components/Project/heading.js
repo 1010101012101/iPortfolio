@@ -8,7 +8,7 @@ import {
     Button
 } from 'semantic-ui-react';
 
-const Heading = ({ heading, subHeading, content }) => {
+const Heading = ({ heading, subHeading, content, url }) => {
     return (
         <Container fluid>
             <Segment basic>
@@ -18,13 +18,13 @@ const Heading = ({ heading, subHeading, content }) => {
                     </Header.Content>
                     <Divider />
                     <Header.Subheader>
-                        {subHeading}
+                        Build tools: {subHeading}
                     </Header.Subheader>
                 </Header>
-                <Segment basic size='large'>
+                <Segment textAlign='left' basic size='large' style={{ fontWeight: '300', lineHeight: '130%' }}>
                     {content}
                 </Segment>
-                <Button className="hvr-ripple-out" basic size='large' primary style={{ marginTop: '5%' }}>
+                <Button as='a' href={url} target='_blank' className="hvr-ripple-out" basic size='large' primary style={{ marginTop: '5%' }}>
                     View more..
                 </Button>
             </Segment>

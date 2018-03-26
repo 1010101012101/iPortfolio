@@ -13,14 +13,9 @@ import Image from './projectImage';
 
 class ProjectItem extends Component {
     render() {
-        const { position } = this.props;
-        const heading = {
-            headingName: 'ProjectName',
-            subHeading: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
-            content: 'incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam incididunt ut labore et dolore magna aliqua. Ut enim a'
-        }
-        const imageSrc = 'https://d1wn0q81ehzw6k.cloudfront.net/additional/thul/media/0eaa14d11e8930f5?w=400&h=400';
-        const headingElement = <Heading heading={heading.headingName} subHeading={heading.subHeading} content={heading.content} />
+        const { position, info } = this.props;
+        const imageSrc = info.imageSrc;
+        const headingElement = <Heading url={info.url} heading={info.projectName} subHeading={info.intro} content={info.description} />
         const imageElement = <Image src={imageSrc} />
         return (
             <Container fluid style={{ borderBottom: '2px solid #E0E0E0' }}>
@@ -30,7 +25,7 @@ class ProjectItem extends Component {
                         style={{ marginTop: '5%' }}
                         verticalAlign='middle'>
                         <Grid.Row textAlign='center' style={{ marginBottom: '5%' }}>
-                            <Grid.Column width={7} textAlign='center'>
+                            <Grid.Column width={7}>
                                 {position == 'left' ? headingElement : imageElement}
                             </Grid.Column>
 

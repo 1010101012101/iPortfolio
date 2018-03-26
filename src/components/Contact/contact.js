@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {
+    Image,
     Responsive,
     Transition,
     TransitionablePortal,
@@ -12,12 +13,11 @@ class Contact extends Component {
     handleClose = () => this.setState({ open: false });
     render() {
         return (
-            <Container fluid textAlign='center' style={{ marginTop: '5%', borderBottom: '2px solid #E0E0E0' }}>
+            <Container fluid textAlign='center' style={{ borderBottom: '2px solid #E0E0E0' }}>
                 <Responsive {...Responsive.onlyComputer}>
-                    <Header color='red' size='huge' textAlign='center'
-                        style={{ marginTop: '5%' }}>
+                    <Header color='red' size='huge' textAlign='center'>
                         <Header.Content>
-                            Lorem ipsum dolor
+                            Contact me
                     </Header.Content>
                     </Header>
                     <Header color='blue' size='large' textAlign='center'
@@ -25,25 +25,27 @@ class Contact extends Component {
                             marginTop: '2%',
                             marginBottom: '5%'
                         }}>
-                        Lorem ipsum dolor sit amet
-                </Header>
+                        Wanna talk to me? Just click on the button right below
+                        <Icon name='angle double down' />
+                    </Header>
                     <Button positive className='hvr-rectangle-in' style={{ marginBottom: '5%' }} primary basic size='massive' onClick={this.handleOpen}>
                         Get started
                 </Button>
                     {/* NOTE: maybe modal get called to close before transition get called so the there is no close animation */}
-                    <Transition visible={this.state.open} animation='scale' duration={400}>
-                        <Modal
-                            open={this.state.open}
-                            closeOnRootNodeClick={false}
-                            basic
-                            size='fullscreen'>
-                            <Container fluid style={{ width: '50%', marginTop: '30%' }}>
+                    <TransitionablePortal onClose={this.handleClose} open={this.state.open} transition={{ animation: 'scale', duration: 500 }} >
+                        <Container fluid style={{ backgroundColor: 'black', position: 'fixed', top: '0%', height: '100%', zIndex: 1000 }}>
+                            <Button onClick={this.handleClose} size='large' icon circular basic inverted floated='right' style={{ margin: '2%' }}>
+                                <Icon name='x' />
+                            </Button>
+                            <Container style={{ width: '50%', marginTop: '10%' }}>
+
                                 <Header size='huge' inverted textAlign='center'>
-                                    <Header.Content>
-                                        Lorem ipsum dolor sit amet
+
+                                    <Header.Content style={{ marginBottom: '5%' }}>
+                                        After all, communication is everything,&nbsp;right?
                                     </Header.Content>
                                     <Header.Subheader>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                        Just a few questions and I'll get in touch with you ASAP.
                                     </Header.Subheader>
                                 </Header>
                                 <Grid textAlign='center' style={{ marginTop: '15%' }}>
@@ -81,8 +83,9 @@ class Contact extends Component {
                                     </Grid.Row>
                                 </Grid>
                             </Container>
-                        </Modal>
-                    </Transition>
+                        </Container>
+
+                    </TransitionablePortal>
                 </Responsive>
 
 
@@ -91,16 +94,17 @@ class Contact extends Component {
                     <Header color='red' size='large' textAlign='center'
                         style={{ marginTop: '5%' }}>
                         <Header.Content>
-                            Lorem ipsum dolor
+                            Contact me
                     </Header.Content>
                     </Header>
-                    <Header color='blue' size='medium' textAlign='center'
+                    <Header color='blue' size='small' textAlign='center'
                         style={{
                             marginTop: '2%',
                             marginBottom: '5%'
                         }}>
-                        Lorem ipsum dolor sit amet
-                </Header>
+                        Wanna talk to me? click on the button right below
+                        <Icon name='angle double down' />
+                    </Header>
                     <Button positive className='hvr-rectangle-in' style={{ marginBottom: '5%' }} primary basic size='large' onClick={this.handleOpen}>
                         Get started
                 </Button>
@@ -114,11 +118,11 @@ class Contact extends Component {
                             size='fullscreen' style={{ marginTop: '40%' }}>
                             <Container fluid style={{ width: '50%' }}>
                                 <Header size='huge' inverted textAlign='center'>
-                                    <Header.Content>
-                                        Lorem ipsum dolor sit amet
+                                    <Header.Content style={{ marginBottom: '5%' }}>
+                                        After all, communication is everything,&nbsp;right?
                                     </Header.Content>
                                     <Header.Subheader>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                        Just a few questions and I'll get in touch with you ASAP.
                                     </Header.Subheader>
                                 </Header>
                                 <Grid textAlign='center' style={{ marginTop: '15%' }}>

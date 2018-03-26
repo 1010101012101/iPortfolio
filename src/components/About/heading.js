@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Responsive, Container, Divider, Segment, Header, Image } from 'semantic-ui-react'
 class AboutHeading extends Component {
     render() {
-        const { header, subheader } = this.props;
+        const { header } = this.props;
         return (
             <Container fluid>
                 <Responsive {...Responsive.onlyComputer}>
@@ -11,7 +11,7 @@ class AboutHeading extends Component {
                             {header}
                         </Header.Content>
                         <Header.Subheader>
-                            {subheader}
+                            <p>Let's get to know more about me!.</p>
                         </Header.Subheader>
 
                     </Header>
@@ -24,7 +24,7 @@ class AboutHeading extends Component {
                             {header}
                         </Header.Content>
                         <Header.Subheader>
-                            {subheader}
+                            <p>Let's get to know more about me!.</p>
                         </Header.Subheader>
 
                     </Header>
