@@ -6,69 +6,70 @@ import { animateScroll as scroll } from 'react-scroll';
 
 import logoImage from '../../assets/logo.png';
 const Footer = () => (
-    <Container fluid style={{ width: '100%', backgroundColor: '#ff7961' }}>
+    <React.Fragment>
         <Responsive {...Responsive.onlyComputer}>
-            <Grid textAlign='center'>
-                <Grid.Row>
-                    <Header textAlign='center'>
-                        <Image href="#" style={{ marginBottom: '5%' }} src={logoImage} size='huge' onClick={() => scroll.scrollToTop()} />
+            <Container fluid style={{ width: '100%', backgroundColor: '#ff7961' }}>
 
-                        <Header.Subheader>
-                            Handmade by me - Khang Tran &copy; 2018
+                <Grid textAlign='center'>
+                    <Grid.Row>
+                        <Header textAlign='center'>
+                            <Image href="#" style={{ marginBottom: '5%' }} src={logoImage} size='huge' onClick={() => scroll.scrollToTop()} />
+
+                            <Header.Subheader>
+                                Handmade by me - Khang Tran &copy; 2018
                     </Header.Subheader>
-                    </Header>
+                        </Header>
 
-                </Grid.Row>
-                <Grid.Row>
-                    <Button.Group size='large'>
-                        <Button as='a' href='https://www.facebook.com/khangishere' target='_blank' className='hvr-wobble-vertical' color='facebook'>
-                            <Icon name='facebook' /> Facebook
-                    </Button>
-                        <Button as='a' href='mailto:cktran16x2@gmail.com' className='hvr-wobble-vertical' color='google plus'>
-                            <Icon name='mail' /> Email
-                    </Button>
-                        <Button as='a' href='https://www.linkedin.com/in/khangtranx/' target='_blank' className='hvr-wobble-vertical' color='linkedin'>
-                            <Icon name='linkedin' /> LinkedIn
-                    </Button>
-                        <Button as='a' href='http://github.com/Khang-Tran' target='_blank' className='hvr-wobble-vertical' color='black'>
-                            <Icon name='github' /> Github
-                    </Button>
-                    </Button.Group>
-                </Grid.Row>
-            </Grid>
+                    </Grid.Row>
+                    <Grid.Row>
+                        <Button icon='facebook' circular as='a' href='https://www.facebook.com/khangishere' target='_blank' className='hvr-wobble-vertical' color='facebook'>
+                        </Button>
+                        <Button icon='mail' as='a' circular href='mailto:cktran16x2@gmail.com' className='hvr-wobble-vertical' color='google plus'>
+                        </Button>
+                        <Button icon='linkedin' as='a' circular href='https://www.linkedin.com/in/khangtranx/' target='_blank' className='hvr-wobble-vertical' color='linkedin'>
+                        </Button>
+                        <Button icon='github' as='a' href='http://github.com/Khang-Tran' target='_blank' className='hvr-wobble-vertical' color='black'>
+                        </Button>
+                    </Grid.Row>
+                </Grid>
+            </Container>
         </Responsive>
 
         <Responsive {...Responsive.onlyMobile}>
-            <Grid container textAlign='center' verticalAlign='middle'>
-                <Grid.Row>
-                    <Header size='medium' textAlign='center'>
-                        <Header.Content>
-                            <Icon size='small' onClick={() => scroll.scrollToTop()} link name='home' />
-                        </Header.Content>
+            <Container fluid style={{ width: '100%', backgroundColor: '#ff7961', display: 'table-cell' }}>
 
-                        <Header.Subheader>
-                            Lorem ipsum dolor sit amet
+                <Grid container textAlign='center' verticalAlign='middle' >
+                    <Grid.Row>
+                        <Header size='medium' textAlign='center'>
+                            <Header.Content>
+                                <Icon size='small' onClick={() => scroll.scrollToTop()} link name='home' />
+                            </Header.Content>
+
+                            <Header.Subheader>
+                                Handmade by me - Khang Tran &copy; 2018
                     </Header.Subheader>
-                    </Header>
-                    <Button.Group size='tiny'>
-                        <Button as='a' href='https://www.facebook.com/khangishere' target='_blank' className='hvr-wobble-vertical' color='facebook'>
-                            <Icon name='facebook' /> Facebook
+                        </Header>
+                        <Button.Group size='tiny'>
+                            <Button as='a' href='https://www.facebook.com/khangishere' target='_blank' className='hvr-wobble-vertical' color='facebook'>
+                                <Icon name='facebook' /> Facebook
                     </Button>
-                        <Button as='a' href='https://plus.google.com/105861925169691513017' className='hvr-wobble-vertical' color='google plus'>
-                            <Icon name='google plus' /> Google Plus
+                            <Button as='a' href='mailto:cktran16x2@gmail.com' className='hvr-wobble-vertical' color='google plus'>
+                                <Icon name='mail' /> Gmail
                     </Button>
-                        <Button as='a' href='https://www.linkedin.com/in/khangtranx/' target='_blank' className='hvr-wobble-vertical' color='linkedin'>
-                            <Icon name='linkedin' /> LinkedIn
+                            <Button as='a' href='https://www.linkedin.com/in/khangtranx/' target='_blank' className='hvr-wobble-vertical' color='linkedin'>
+                                <Icon name='linkedin' /> LinkedIn
                     </Button>
-                        <Button as='a' href='http://github.com/Khang-Tran' target='_blank' className='hvr-wobble-vertical' color='black'>
-                            <Icon name='github' /> Github
+                            <Button as='a' href='http://github.com/Khang-Tran' target='_blank' className='hvr-wobble-vertical' color='black'>
+                                <Icon name='github' /> Github
                     </Button>
-                    </Button.Group>
+                        </Button.Group>
 
-                </Grid.Row>
-            </Grid>
+                    </Grid.Row>
+                </Grid>
+            </Container>
+
         </Responsive>
-    </Container>
+    </React.Fragment>
 );
 
 export default Footer;

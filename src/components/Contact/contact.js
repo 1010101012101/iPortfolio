@@ -33,7 +33,7 @@ class Contact extends Component {
                 </Button>
                     {/* NOTE: maybe modal get called to close before transition get called so the there is no close animation */}
                     <TransitionablePortal onClose={this.handleClose} open={this.state.open} transition={{ animation: 'scale', duration: 500 }} >
-                        <Container fluid style={{ backgroundColor: 'black', position: 'fixed', top: '0%', height: '100%', zIndex: 1000 }}>
+                        <Container fluid style={{ backgroundColor: '#424242', position: 'fixed', top: '0%', height: '100%', zIndex: 1000 }}>
                             <Button onClick={this.handleClose} size='large' icon circular basic inverted floated='right' style={{ margin: '2%' }}>
                                 <Icon name='x' />
                             </Button>
