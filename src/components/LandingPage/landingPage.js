@@ -6,13 +6,14 @@ import {
 import Background from './background';
 import Header from './mainHeader';
 import NextButton from './nextPageButton';
-import ReponsiveContainer from './responsiveContainer';
+import MainHeader from './mainHeader'
 class LandingPage extends Component {
     render() {
         return (
-            <ReponsiveContainer>
+            <Container fluid>
                 <Background />
-            </ReponsiveContainer>
+                <MainHeader />
+            </Container>
         );
     }
 }
