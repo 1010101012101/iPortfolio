@@ -10,6 +10,7 @@ class TypistMessage extends Component {
         typing: true
     };
 
+
     onTypingComplete = () => {
         const skills = ['C#', 'C++', 'JavaScript', 'HTML/CSS', 'ASP.NET Core', 'Node.js', 'React', 'Angular', 'ASP.NET MVC 5', 'Oracle', 'SQL Server', 'Entity Framework', 'PostgresSQL', 'WPF', 'MongoDB'];
 

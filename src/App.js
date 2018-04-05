@@ -1,11 +1,7 @@
 import 'styling/semantic.less'
 
 import React, { Component } from 'react';
-import {
-  Transition,
-  Menu,
-  Container
-} from 'semantic-ui-react';
+import { Container } from 'semantic-ui-react';
 import { Element, animateScroll as scroll } from 'react-scroll'
 
 import ReposiveContainer from './components/Containers/responsiveContainer';
@@ -29,7 +25,7 @@ class App extends Component {
   render() {
     return (
       <ReposiveContainer>
-        <Container fluid style={{ display: 'table-cell', backgroundColor: '#f9f6f3' }}>
+        <Container fluid style={{ backgroundColor: '#f9f6f3', display: 'inherit' }}>
           <LandingPage name="landingPage" />
           <About name="aboutPage" />
           <Skills />

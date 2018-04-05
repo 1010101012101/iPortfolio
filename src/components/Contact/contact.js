@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
-import {
-    Image,
-    Responsive,
-    Transition,
-    TransitionablePortal,
-    Form, Input, TextArea, Modal, Segment, Container, Button, Icon, Grid, Header, Divider, CommentAction
-} from 'semantic-ui-react';
+import { Container, Grid, TransitionablePortal, Segment } from 'semantic-ui-react';
 import MobileContext from '../Context/mobileContext';
 import Greeting from './greeting';
 import Introduction from './introduction';
@@ -30,28 +24,24 @@ class Contact extends Component {
                         <Introduction content={content} mobile={mobile} />
                         <StartedButton handleOpen={this.handleOpen} />
                         <TransitionablePortal onClose={this.handleClose} open={this.state.open} transition={{ animation: 'scale', duration: 500 }} >
-                            <Container fluid style={{ backgroundColor: '#424242', position: 'fixed', top: '0%', height: '100%', zIndex: 1000 }}>
+                            <Segment style={{ backgroundColor: '#424242', position: 'fixed', top: '0%', height: '100%', width: '100%' }}>
                                 <CloseButton handleClose={this.handleClose} />
                                 <Container style={{ width: '50%', marginTop: '10%' }}>
                                     <FormHeader />
                                     <Grid textAlign='center' style={{ marginTop: '15%' }}>
                                         <Grid.Row verticalAlign='middle'>
                                             <Grid.Column>
-                                                <Modal.Content>
-                                                    <ContactForm />
-                                                </Modal.Content>
+                                                <ContactForm />
                                             </Grid.Column>
                                         </Grid.Row>
                                         <Grid.Row textAlign='center'>
-                                            <Modal.Actions>
-                                                <Segment basic padded='very'>
-                                                    <NavigateButton handleClose={this.handleClose} />
-                                                </Segment>
-                                            </Modal.Actions>
+                                            <Segment basic padded='very'>
+                                                <NavigateButton handleClose={this.handleClose} />
+                                            </Segment>
                                         </Grid.Row>
                                     </Grid>
                                 </Container>
-                            </Container>
+                            </Segment>
 
                         </TransitionablePortal>
                     </Container>

@@ -7,13 +7,18 @@ import Background from './background';
 import Header from './mainHeader';
 import NextButton from './nextPageButton';
 import MainHeader from './mainHeader'
+import MobileContext from '../Context/mobileContext';
 class LandingPage extends Component {
     render() {
         return (
-            <Container fluid>
-                <Background />
-                <MainHeader />
-            </Container>
+            <MobileContext.Consumer>
+                {mobile =>
+                    <Container fluid style={{ display: mobile ? 'inherit' : 'inline-block' }}>
+                        <Background />
+                        <MainHeader />
+                    </Container>
+                }
+            </MobileContext.Consumer>
         );
     }
 }

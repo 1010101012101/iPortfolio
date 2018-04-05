@@ -47,7 +47,7 @@ class MainHeader extends Component {
         return (
             <MobileContext.Consumer>
                 {mobile =>
-                    <Container fluid style={{ display: 'inline-block', height: this.state.height + 5 + 'px', }} >
+                    <Container fluid style={{ height: this.state.height + 5 + 'px', }} >
                         <Grid container>
                             <Transition visible={this.state.visible} animation='fade down' duration={500}>
                                 <Grid.Row textAlign='center'

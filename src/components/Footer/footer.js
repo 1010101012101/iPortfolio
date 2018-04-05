@@ -36,8 +36,8 @@ class Footer extends Component {
         return (
             <MobileContext.Consumer>
                 {mobile =>
-                    <Container fluid style={{ width: '100%', backgroundColor: '#ff7961' }}>
-                        <Grid textAlign='center'>
+                    <Container fluid >
+                        <Grid textAlign='center' style={{ backgroundColor: '#ff7961' }}>
                             <Grid.Row>
                                 <CopyRight mobile={mobile} logoImage={logoImage} scroll={this.scrollToTop} />
                             </Grid.Row>

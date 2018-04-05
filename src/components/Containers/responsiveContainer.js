@@ -14,8 +14,7 @@ const ResponsiveContainer = ({ children }) => (
             </MobileContext.Provider>
         </Responsive>
 
-        <Responsive {...Responsive.onlyMobile}
-            style={{ display: 'table-row-group' }}>
+        <Responsive {...Responsive.onlyMobile} style={{ display: 'table-cell' }}>
             <MobileContext.Provider value={true}>
                 {children}
             </MobileContext.Provider>
