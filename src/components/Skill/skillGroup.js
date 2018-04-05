@@ -21,9 +21,8 @@ class SkillGroup extends Component {
         const firstRowItems = this.renderItems(skills.slice(0, Math.round(skills.length / 2)));
         const secondRowItems = this.renderItems(skills.slice(Math.round(skills.length / 2), skills.length));
 
-        const itemRows = [];
-        itemRows.push(firstRowItems);
-        itemRows.push(secondRowItems);
+        let itemRows = [];
+        itemRows.push(firstRowItems, secondRowItems);
         return (
             <Container fluid>
                 <SkillGroupHeader mobile={mobile} content={content} header={header} />

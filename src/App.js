@@ -12,7 +12,7 @@ import ReposiveContainer from './components/Containers/responsiveContainer';
 import LandingPage from './components/LandingPage/landingPage';
 import Skills from './components/Skill/skills';
 import About from './components/About/about';
-import ProjectList from './components/Project/projectList';
+import ProjectList from './components/Project/projects';
 import Contact from './components/Contact/contact';
 import InView from './components/InView/inView';
 import Footer from './components/Footer/footer';
