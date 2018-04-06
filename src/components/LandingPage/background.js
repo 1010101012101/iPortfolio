@@ -116,7 +116,7 @@ const Background = () =>
                 width: '100%',
                 height: '100%',
                 position: 'absolute',
-                backgroundImage: `url('${backgroundImage}')`
+                backgroundImage: `url('${backgroundImage}')`,
             }}
         />
     );

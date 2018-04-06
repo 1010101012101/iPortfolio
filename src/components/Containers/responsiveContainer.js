@@ -16,9 +16,9 @@ const ResponsiveContainer = ({ children }) => (
 
         <Responsive {...Responsive.onlyMobile} style={{ display: 'table-cell' }}>
             <MobileContext.Provider value={true}>
+                <MobileNavBar />
                 {children}
             </MobileContext.Provider>
-            <MobileNavBar />
         </Responsive>
     </React.Fragment>
 )

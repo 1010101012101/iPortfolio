@@ -20,14 +20,13 @@ class MobileNavBar extends Component {
     render() {
         const { sidebarOpened } = this.state;
         return (
-            <Sidebar.Pushable>
-                <Sidebar as={Menu} animation='slide along' width='thin' inverted vertical visible={sidebarOpened}>
+            <Sidebar.Pushable style={{ padding: '5px 0 0 5px', position: 'absolute', zIndex: 2, width: '100%' }}>
+                <Sidebar as={Menu} animation='overlay' width='thin' inverted vertical visible={sidebarOpened}>
                     <NavBarItems />
                 </Sidebar>
 
                 <Sidebar.Pusher dimmed={sidebarOpened} onClick={this.handlePusherClick} >
-                    <Menu.Item onClick={this.handleToggle}
-                        style={{ padding: '5px 0 0 5px', position: 'absolute', zIndex: 1 }}>
+                    <Menu.Item onClick={this.handleToggle}>
                         <Icon size='large' inverted name='sidebar' />
                     </Menu.Item>
                 </Sidebar.Pusher>
