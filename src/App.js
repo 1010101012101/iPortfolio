@@ -1,20 +1,18 @@
 import 'styling/semantic.less'
 
 import React, { Component } from 'react';
-import {
-  Transition,
-  Menu,
-  Container
-} from 'semantic-ui-react';
+import { Container } from 'semantic-ui-react';
+import { Element, animateScroll as scroll } from 'react-scroll'
+
+import ReposiveContainer from './components/Containers/responsiveContainer';
 import LandingPage from './components/LandingPage/landingPage';
-import Skill from './components/Skill/skill';
+import Skills from './components/Skill/skills';
 import About from './components/About/about';
-import ProjectList from './components/Project/projectList';
+import ProjectList from './components/Project/projects';
 import Contact from './components/Contact/contact';
 import InView from './components/InView/inView';
 import Footer from './components/Footer/footer';
-import './App.less'
-import { Element, animateScroll as scroll } from 'react-scroll'
+
 
 class App extends Component {
   componentDidMount() {
@@ -26,15 +24,16 @@ class App extends Component {
   }
   render() {
     return (
-      <Container fluid style={{ display: 'table-cell', backgroundColor: '#f9f6f3' }}>
-        <LandingPage name="landingPage" />
-
-        <About name="aboutPage" />
-        <Skill />
-        <ProjectList name="projectPage" />
-        <Contact name="contactPage" />
-        <Footer />
-      </Container>
+      <ReposiveContainer>
+        <Container fluid style={{ backgroundColor: '#f9f6f3', display: 'inherit' }}>
+          <LandingPage name="landingPage" />
+          <About name="aboutPage" />
+          <Skills />
+          <ProjectList name="projectPage" />
+          <Contact name="contactPage" />
+          <Footer />
+        </Container>
+      </ReposiveContainer>
     );
   }
 }

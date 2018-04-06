@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 
-import {
-    Container,
-    Header,
-    Transition
-} from 'semantic-ui-react';
+import { Container, Transition } from 'semantic-ui-react';
 
 import ProjectItem from './projectItem';
 import iShopImage from '../../assets/iShop.png';
 import oShopImage from '../../assets/oShop.png';
 import musicLoversImage from '../../assets/musicLovers.png';
-class ProjectList extends Component {
+import MobileContext from '../Context/mobileContext';
+import Introduction from './introduction';
+class Projects extends Component {
+
     render() {
         let infos = [
             {
@@ -36,26 +35,25 @@ class ProjectList extends Component {
                 url: 'https://github.com/Khang-Tran/Metro-StudentManagement'
             },
         ]
+        const header = 'My Projects';
+        const subHeader = `Let's learn about what I built!.`;
         return (
-            <Transition visible={this.props.visible} animation='slide up' duration={500}>
-
-                <Container fluid style={{ marginTop: '10%', marginBottom: '10%' }}>
-                    <Header color='red' size='huge' textAlign='center'>
-                        <Header.Content>
-                            My Projects
-                        </Header.Content>
-                        <Header.Subheader>
-                            Let's learn about what I built!.
-                        </Header.Subheader>
-                    </Header>
-                    <ProjectItem info={infos[0]} position='left' />
-                    <ProjectItem info={infos[1]} position='right' />
-                    <ProjectItem info={infos[2]} position='left' />
-
-                </Container>
-            </Transition>
+            <MobileContext.Consumer>
+                {mobile =>
+                    <Transition visible={this.props.visible} animation='slide up' duration={500}>
+                        <Container fluid style={{ marginTop: '10%', marginBottom: '10%' }}>
+                            <Introduction header={header} subHeader={subHeader} />
+                            {infos.map((info, index) =>
+                                <ProjectItem key={index}
+                                    info={info}
+                                    position={index % 2 === 0 ? 'left' : 'right'}
+                                    mobile={mobile} />)}
+                        </Container>
+                    </Transition>
+                }
+            </MobileContext.Consumer>
         );
     }
 }
 
-export default ProjectList;
+export default Projects;

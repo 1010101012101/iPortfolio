@@ -1,14 +1,9 @@
 import React, { Component } from 'react';
 
-import {
-    Button,
-    Menu,
-    Container,
-    Icon,
-    Image
-} from 'semantic-ui-react';
+import { Menu, Image } from 'semantic-ui-react';
 import { Link, animateScroll as scroll } from 'react-scroll';
 
+import NavBarItems from './navBarItems';
 import logoImage from '../../assets/logo.png';
 
 class DesktopNavBar extends Component {
@@ -25,11 +20,7 @@ class DesktopNavBar extends Component {
                     <Image src={logoImage} size='tiny' />
                 </Menu.Item>
                 <Menu.Menu position='right' style={{ fontWeight: '900' }}>
-                    <Menu.Item header onClick={() => scroll.scrollToTop()} >
-                        HOME
-                    </Menu.Item>
-                    <Menu.Item header onClick={() => scroll.scrollToBottom()}>CONTACT</Menu.Item>
-                    <Menu.Item header href="src/assets/resume.pdf" download="resume.pdf">RESUME</Menu.Item>
+                    <NavBarItems />
                 </Menu.Menu>
             </Menu>
         );

@@ -6,13 +6,19 @@ import {
 import Background from './background';
 import Header from './mainHeader';
 import NextButton from './nextPageButton';
-import ReponsiveContainer from './responsiveContainer';
+import MainHeader from './mainHeader'
+import MobileContext from '../Context/mobileContext';
 class LandingPage extends Component {
     render() {
         return (
-            <ReponsiveContainer>
-                <Background />
-            </ReponsiveContainer>
+            <MobileContext.Consumer>
+                {mobile =>
+                    <Container fluid style={{ display: mobile ? 'inherit' : 'inline-block' }}>
+                        <Background />
+                        <MainHeader />
+                    </Container>
+                }
+            </MobileContext.Consumer>
         );
     }
 }

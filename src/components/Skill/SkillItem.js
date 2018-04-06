@@ -1,37 +1,16 @@
 import React, { Component } from 'react';
-import {
-    Responsive,
-    Container,
-    Header,
-    Icon,
-    Image
-} from 'semantic-ui-react';
+import { Container, Header } from 'semantic-ui-react';
 
-class SkillItem extends Component {
-    render() {
-        const { header, icon } = this.props;
+const SkillItem = ({ header, icon, mobile }) => (
+    <Container fluid>
+        <Header size={mobile ? 'small' : 'tiny'} icon>
+            <i className={icon} style={{ fontSize: mobile ? '4em' : '5em' }}></i>
+            <Header.Content>
+                {header}
+            </Header.Content>
+        </Header>
+    </Container>
+);
 
-        return (
-            <Container fluid>
-                <Responsive {...Responsive.onlyComputer}>
-                    <Header size='small' icon>
-                        <i className={icon} style={{ fontSize: '5em' }}></i>
-                        <Header.Content>
-                            {this.props.header}
-                        </Header.Content>
-                    </Header>
-                </Responsive>
-                <Responsive {...Responsive.onlyMobile}>
-                    <Header size='tiny' icon>
-                        <i className={icon} style={{ fontSize: '4em' }}></i>
-                        <Header.Content>
-                            {this.props.header}
-                        </Header.Content>
-                    </Header>
-                </Responsive>
-            </Container>
-        );
-    }
-}
 
 export default SkillItem;

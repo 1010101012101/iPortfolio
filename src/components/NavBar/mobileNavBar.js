@@ -1,23 +1,36 @@
 import React, { Component } from 'react';
-
 import {
-    Button,
-    Menu,
-    Container,
-    Icon,
-    Image
+    Sidebar, Menu, Icon
 } from 'semantic-ui-react';
-import { animateScroll as scroll } from 'react-scroll';
 
-
+import NavBarItems from './navBarItems';
 class MobileNavBar extends Component {
+    state = { sidebarOpened: false };
+
+    handlePusherClick = () => {
+        const { sidebarOpened } = this.state
+
+        if (sidebarOpened)
+            this.setState({ sidebarOpened: false });
+    }
+
+    handleToggle = () =>
+        this.setState({ sidebarOpened: !this.state.sidebarOpened });
+
     render() {
+        const { sidebarOpened } = this.state;
         return (
-            <Sidebar as={Menu} animation='slide along' width='thin' inverted vertical visible={sidebarOpened}>
-                <Menu.Item header onClick={() => scroll.scrollToTop()} >HOME</Menu.Item>
-                <Menu.Item header onClick={() => scroll.scrollToBottom()}>CONTACT</Menu.Item>
-                <Menu.Item header href="src/assets/resume.pdf">RESUME</Menu.Item>
-            </Sidebar>
+            <Sidebar.Pushable style={{ padding: '5px 0 0 5px', position: 'absolute', zIndex: 2, width: '100%' }}>
+                <Sidebar as={Menu} animation='overlay' width='thin' inverted vertical visible={sidebarOpened}>
+                    <NavBarItems />
+                </Sidebar>
+
+                <Sidebar.Pusher dimmed={sidebarOpened} onClick={this.handlePusherClick} >
+                    <Menu.Item onClick={this.handleToggle}>
+                        <Icon size='large' inverted name='sidebar' />
+                    </Menu.Item>
+                </Sidebar.Pusher>
+            </Sidebar.Pushable>
         );
     }
 }
