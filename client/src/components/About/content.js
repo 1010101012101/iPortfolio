@@ -26,7 +26,7 @@ class Content extends Component {
                             <Container>
                                 {paragraphs[paragraphs.length - 1]}
                                 &nbsp;<Icon size='large' name='mail' link onClick={() => scroll.scrollToBottom()} />.
-                        </Container>
+                            </Container>
                         </Segment>
                     </Container>
                 }

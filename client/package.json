@@ -14,6 +14,7 @@
     "semantic-ui-less": "^2.2.12",
     "semantic-ui-react": "^0.78.2"
   },
+  "proxy": "http://localhost:5000/",
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.40",
     "@babel/plugin-proposal-class-properties": "^7.0.0-beta.40",
