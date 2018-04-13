@@ -10,7 +10,10 @@ class ContactForm extends Component {
         super(props);
         this.state = {
             isShow: false,
-            error: false,
+            error: {
+                value: false,
+                type: ''
+            },
             name: '',
             message: '',
             email: ''
@@ -27,35 +30,60 @@ class ContactForm extends Component {
             header: 'Action Forbidden',
             message: 'Please fill all the inputs below and make sure email is in right format!'
         };
+        this.error = {
+            header: 'Action Error',
+            message: 'Sorry, please refresh the page and try again!'
+        };
     }
 
     onSubmit = () => {
         if (this.state.name === '' || this.state.message === '' || this.state.email === '' || this.state.email.indexOf('@') === -1)
             this.setState({
                 isShow: true,
-                error: true
+                error: {
+                    value: true,
+                    type: 'invalid'
+                }
+            });
+        else {
+            this.setState({
+                isShow: true,
+                error: {
+                    value: false,
+                    type: ''
+                }
             });
 
-        axios.post(this.serverUrl, {
-            email: this.state.email,
-            message: this.state.message,
-            name: this.state.name
-        });
+            axios.post(this.serverUrl, {
+                email: this.state.email,
+                message: this.state.message,
+                name: this.state.name
+            })
+                .then(setInterval(this.props.handleClose, 3000))
+                .catch(this.setState({
+                    isShow: true,
+                    error: {
+                        value: true,
+                        type: 'error'
+                    }
+                }));
+        }
+
     }
 
     render() {
         const { handleClose } = this.props;
         const { error, isShow } = this.state;
         return (
-            <Form error={error}
-                success={!error}
+            <Form error={error.value}
+                success={!error.value}
                 inverted>
                 <Segment basic >
                     <Message
                         hidden={!isShow}
-                        error={error} success={!error}
-                        header={error ? this.fail.header : this.success.header}
-                        content={error ? this.fail.message : this.fail.message} />
+                        error={error.value} success={!error.value}
+                        header={error.value ? error.type === 'invalid' ? this.fail.header : this.error.header : this.success.header}
+                        content={error.value ? error.type === 'invalid' ? this.fail.message : this.error.message : this.success.message} />
                 </Segment>
                 <Segment basic >
                     <Form.Input value={this.state.name}

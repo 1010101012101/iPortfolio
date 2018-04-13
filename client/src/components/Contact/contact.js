@@ -11,7 +11,7 @@ import CloseButton from './closeButton';
 class Contact extends Component {
     constructor() {
         super();
-        this.state = { open: false, complete: false };
+        this.state = { open: false };
         this.header = 'Contact me';
         this.content = ' Wanna talk to me? click on the button right below';
         this.formHeader = 'After all, communication is everything, right?';

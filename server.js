@@ -32,14 +32,14 @@ app.post('/contact', (req, res) => {
         port: 465,
         secure: true,
         auth: {
-            user: 'cktran16x2@gmail.com',
-            pass: 'Password!'
+            user: 'USER',
+            pass: 'PASSWORD'
         }
     });
     mailOpts = {
         from: req.body.name + ' &lt;' + req.body.email + '&gt;',
-        to: 'piskael03@gmail.com',
-        subject: 'New message from contact form at khangtran.ca',
+        to: 'RECEIVER',
+        subject: 'New message from contact form at',
         text: `${req.body.name} (${req.body.email}) says: ${req.body.message}`
     };
     smtpTrans.sendMail(mailOpts, function (error) {
@@ -50,5 +50,5 @@ app.post('/contact', (req, res) => {
         }
     });
 });
-
+/* eslint-disable */
 app.listen(port, () => console.log(`Listening on port ${port}`));
