@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-
-import { Image, Responsive, Segment, Container, Grid, Header, Button, Icon } from 'semantic-ui-react';
-
+import { Container, Grid } from 'semantic-ui-react';
 import { animateScroll as scroll } from 'react-scroll';
 
 import MobileContext from '../Context/mobileContext';
@@ -9,9 +7,11 @@ import CopyRight from './copyRight';
 import SocialButton from './socialButton';
 import logoImage from '../../assets/logo.png';
 class Footer extends Component {
-    scrollToTop = () => scroll.scrollToTop();
-    render() {
-        const socialButtons = [
+    constructor() {
+        super();
+        this.footerSubHeader = `Handmade by me - Khang Tran &copy; 2018`;
+
+        this.socialButtons = [
             {
                 icon: 'facebook',
                 url: `https://www.facebook.com/khangishere`,
@@ -33,6 +33,9 @@ class Footer extends Component {
                 color: 'black'
             }
         ];
+    }
+    scrollToTop = () => scroll.scrollToTop();
+    render() {
         return (
             <MobileContext.Consumer>
                 {mobile =>
@@ -42,16 +45,13 @@ class Footer extends Component {
                                 <CopyRight mobile={mobile} logoImage={logoImage} scroll={this.scrollToTop} />
                             </Grid.Row>
                             <Grid.Row>
-                                {socialButtons.map((buttonInfo, index) =>
+                                {this.socialButtons.map((buttonInfo, index) =>
                                     <SocialButton
                                         key={index}
-                                        icon={buttonInfo.icon}
-                                        url={buttonInfo.url}
-                                        color={buttonInfo.color} />)}
+                                        info={buttonInfo} />)}
                             </Grid.Row>
                         </Grid>
-                    </Container>
-                }
+                    </Container>}
             </MobileContext.Consumer>
         );
     }

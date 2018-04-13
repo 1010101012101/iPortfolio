@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
-import {
-    Sidebar, Menu, Icon
-} from 'semantic-ui-react';
+import { Sidebar, Menu, Icon } from 'semantic-ui-react';
 
 import NavBarItems from './navBarItems';
 class MobileNavBar extends Component {
     state = { sidebarOpened: false };
 
     handlePusherClick = () => {
-        const { sidebarOpened } = this.state
+        const { sidebarOpened } = this.state;
 
         if (sidebarOpened)
             this.setState({ sidebarOpened: false });

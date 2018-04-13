@@ -3,11 +3,15 @@ const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 
 const app = express();
+/* eslint-disable */
 const port = process.env.PORT || 5000;
+/* eslint-enable */
 
 app.use(bodyParser.json());
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 app.use(function (req, res, next) {
 
     // Website you wish to allow to connect
@@ -28,21 +32,20 @@ app.post('/contact', (req, res) => {
         port: 465,
         secure: true,
         auth: {
-            user: `user@gmail.com`,
-            pass: `Password!`
+            user: 'cktran16x2@gmail.com',
+            pass: 'Password!'
         }
     });
     mailOpts = {
         from: req.body.name + ' &lt;' + req.body.email + '&gt;',
-        to: `piskael03@gmail.com`,
+        to: 'piskael03@gmail.com',
         subject: 'New message from contact form at khangtran.ca',
         text: `${req.body.name} (${req.body.email}) says: ${req.body.message}`
     };
-    smtpTrans.sendMail(mailOpts, function (error, response) {
+    smtpTrans.sendMail(mailOpts, function (error) {
         if (error) {
             res.render('contact-failure');
-        }
-        else {
+        } else {
             res.render('contact-success');
         }
     });

@@ -1,13 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Button } from 'semantic-ui-react';
-const SocialButton = ({ icon, url, color }) => (
-    <Button icon={icon}
+
+const SocialButton = ({ info }) => (
+    <Button icon={info.icon}
         circular as='a'
-        href={url}
+        href={info.url}
         target='_blank'
         className='hvr-wobble-vertical'
-        color={color}>
+        color={info.color}>
     </Button>
 );
 
 export default SocialButton;
+
+SocialButton.propTypes = {
+    info: PropTypes.shape({
+        icon: PropTypes.string,
+        url: PropTypes.string,
+        color: PropTypes.string
+    })
+};

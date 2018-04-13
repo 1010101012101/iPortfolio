@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Header } from 'semantic-ui-react';
 
 const Introduction = ({ mobile, headerContent, subContent }) => (
@@ -14,3 +15,9 @@ const Introduction = ({ mobile, headerContent, subContent }) => (
 );
 
 export default Introduction;
+
+Introduction.propTypes = {
+    mobile: PropTypes.bool,
+    headerContent: PropTypes.string,
+    subContent: PropTypes.string
+};

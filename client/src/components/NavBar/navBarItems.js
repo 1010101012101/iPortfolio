@@ -1,7 +1,5 @@
-import React, { Component } from 'react';
-import {
-    Menu
-} from 'semantic-ui-react';
+import React from 'react';
+import { Menu } from 'semantic-ui-react';
 import { animateScroll as scroll } from 'react-scroll';
 
 

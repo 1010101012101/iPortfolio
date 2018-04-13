@@ -7,6 +7,15 @@ import Greeting from './greeting';
 import Introduction from './introduction';
 import NextPageButton from './nextPageButton';
 class MainHeader extends Component {
+    constructor() {
+        super();
+        this.header = 'Hi, I\'m Khang';
+        this.linkedinLink = 'https://www.linkedin.com/in/khangtranx/';
+        this.githubLink = 'http://github.com/Khang-Tran';
+        this.content = 'A curious, decisive, goal-oriented Web Developer who work hard every day to contribute and change the world.';
+        this.buttonHeader = 'Ready for more?!';
+        this.buttonIcon = 'chevron down';
+    }
     state = {
         height: 0,
         scrollTo: 0,
@@ -21,13 +30,13 @@ class MainHeader extends Component {
     }
 
     componentDidMount() {
-        window.addEventListener("resize", this.updateDimensions);
+        window.addEventListener('resize', this.updateDimensions);
         this.updateDimensions();
-        this.setState({ visible: true })
+        this.setState({ visible: true });
     }
 
     componentWillUnmount() {
-        window.removeEventListener("resize", this.updateDimensions);
+        window.removeEventListener('resize', this.updateDimensions);
     }
 
     onScrollToIntro = () => {
@@ -38,12 +47,6 @@ class MainHeader extends Component {
         });
     }
     render() {
-        const header = 'Hi, I\'m Khang';
-        const linkedinLink = 'https://www.linkedin.com/in/khangtranx/';
-        const githubLink = 'http://github.com/Khang-Tran';
-        const content = 'A curious, decisive, goal-oriented Web Developer who work hard every day to contribute and change the world.';
-        const buttonHeader = 'Ready for more?!';
-        const buttonIcon = 'chevron down';
         return (
             <MobileContext.Consumer>
                 {mobile =>
@@ -57,8 +60,8 @@ class MainHeader extends Component {
                                         height: mobile ? (this.state.height - 300) + 'px' : (this.state.height - 400) + 'px'
                                     }}>
                                     <Container textAlign='center'>
-                                        <Greeting mobile={mobile} header={header} linkedinLink={linkedinLink} githubLink={githubLink} />
-                                        <Introduction mobile={mobile} content={content} />
+                                        <Greeting mobile={mobile} header={this.header} linkedinLink={this.linkedinLink} githubLink={this.githubLink} />
+                                        <Introduction mobile={mobile} content={this.content} />
                                     </Container>
                                 </Grid.Row>
                             </Transition>
@@ -68,7 +71,7 @@ class MainHeader extends Component {
                                         style={{
                                             fontSize: mobile ? '0.5em' : '1.5em'
                                         }}>
-                                        <NextPageButton scroll={this.onScrollToIntro} mobile={mobile} header={buttonHeader} icon={buttonIcon} />
+                                        <NextPageButton scroll={this.onScrollToIntro} mobile={mobile} header={this.buttonHeader} icon={this.buttonIcon} />
                                     </Grid.Column>
                                 </Grid.Row>
                             </Transition>

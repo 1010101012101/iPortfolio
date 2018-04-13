@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Responsive } from 'semantic-ui-react';
 
 import MobileContext from '../Context/mobileContext';
@@ -21,7 +22,11 @@ const ResponsiveContainer = ({ children }) => (
             </MobileContext.Provider>
         </Responsive>
     </React.Fragment>
-)
+);
 
 
 export default ResponsiveContainer;
+
+ResponsiveContainer.propTypes = {
+    children: PropTypes.node
+};

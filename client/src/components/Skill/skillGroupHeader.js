@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
-
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Header } from 'semantic-ui-react';
+
 const SkillGroupHeader = ({ mobile, header, content }) => (
     <Header color='blue' size={mobile ? 'medium' : 'large'} textAlign='center'>
         <Header.Content style={{ marginBottom: '2%' }}>
@@ -13,3 +14,9 @@ const SkillGroupHeader = ({ mobile, header, content }) => (
 );
 
 export default SkillGroupHeader;
+
+SkillGroupHeader.propTypes = {
+    mobile: PropTypes.bool,
+    header: PropTypes.string,
+    content: PropTypes.string
+};

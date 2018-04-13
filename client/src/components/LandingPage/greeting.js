@@ -1,5 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Header, Button, Icon } from 'semantic-ui-react';
+
 
 const Greeting = ({ mobile, header, linkedinLink, githubLink }) => (
     <Header inverted size='huge' style={{ fontSize: mobile ? '1.7em' : '3.5em' }}>
@@ -18,3 +20,10 @@ const Greeting = ({ mobile, header, linkedinLink, githubLink }) => (
 );
 
 export default Greeting;
+
+Greeting.propTypes = {
+    mobile: PropTypes.bool,
+    header: PropTypes.string,
+    linkedinLink: PropTypes.string,
+    githubLink: PropTypes.string
+};

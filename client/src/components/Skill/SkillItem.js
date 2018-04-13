@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Container, Header } from 'semantic-ui-react';
 
 const SkillItem = ({ header, icon, mobile }) => (
@@ -14,3 +15,9 @@ const SkillItem = ({ header, icon, mobile }) => (
 
 
 export default SkillItem;
+
+SkillItem.propTypes = {
+    header: PropTypes.string,
+    icon: PropTypes.string,
+    mobile: PropTypes.bool
+};

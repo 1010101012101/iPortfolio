@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Segment } from 'semantic-ui-react';
 
 const Content = ({ content }) => (
@@ -8,3 +9,7 @@ const Content = ({ content }) => (
 );
 
 export default Content;
+
+Content.propTypes = {
+    content: PropTypes.string
+};

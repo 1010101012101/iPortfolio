@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Segment, Container } from 'semantic-ui-react';
 
 import Content from './content';
@@ -16,6 +16,13 @@ const Heading = ({ heading, subHeading, content, url }) => {
             </Segment>
         </Container>
     );
-}
+};
 
 export default Heading;
+
+Heading.propTypes = {
+    heading: PropTypes.string,
+    subHeading: PropTypes.string,
+    content: PropTypes.string,
+    url: PropTypes.string
+};

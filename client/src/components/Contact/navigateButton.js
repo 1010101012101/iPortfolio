@@ -1,5 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Button, Icon } from 'semantic-ui-react';
+
 const NavigateButton = ({ handleClose, handleSubmit }) => (
     <Button.Group>
         <Button type='button' className='hvr-grow' size='large' basic positive onClick={handleSubmit} inverted>
@@ -13,3 +15,8 @@ const NavigateButton = ({ handleClose, handleSubmit }) => (
 );
 
 export default NavigateButton;
+
+NavigateButton.propTypes = {
+    handleClose: PropTypes.func,
+    handleSubmit: PropTypes.func
+};

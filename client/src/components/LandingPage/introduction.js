@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Container, Header } from 'semantic-ui-react';
 
 const Introduction = ({ mobile, content }) => (
@@ -9,9 +10,13 @@ const Introduction = ({ mobile, content }) => (
                 lineHeight: '200%'
             }}>
             {content}
-
         </Header>
     </Container>
 );
 
 export default Introduction;
+
+Introduction.propTypes = {
+    mobile: PropTypes.bool,
+    content: PropTypes.string
+};

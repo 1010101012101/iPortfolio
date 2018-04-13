@@ -1,14 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Header } from 'semantic-ui-react';
-const ContactFormHeader = () => (
+
+const ContactFormHeader = ({ header, subHeader }) => (
     <Header size='huge' inverted textAlign='center'>
         <Header.Content style={{ marginBottom: '5%' }}>
-            After all, communication is everything,&nbsp;right?
+            {header}
         </Header.Content>
         <Header.Subheader>
-            Just a few questions and I'll get in touch with you ASAP.
+            {subHeader}
         </Header.Subheader>
     </Header>
 );
 
 export default ContactFormHeader;
+
+ContactFormHeader.propTypes = {
+    header: PropTypes.string,
+    subHeader: PropTypes.string
+};

@@ -10,10 +10,12 @@ const render = (Component) => {
       <Component />
     </AppContainer>,
     document.getElementById('root'),
-  )
-}
+  );
+};
 
-render(App)
+render(App);
+/* eslint-disable */
 if (process.env.NODE_ENV === 'development' && module.hot) {
-  module.hot.accept('./App', () => { render(App) })
+  /* eslint-enable */
+  module.hot.accept('./App', () => { render(App); });
 }

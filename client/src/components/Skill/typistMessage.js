@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
-
-
+import PropTypes from 'prop-types';
 import { Header } from 'semantic-ui-react';
 
 import Typist from 'react-typist';
 class TypistMessage extends Component {
+    constructor(props) {
+        super(props);
+        this.skills = ['C#', 'C++', 'JavaScript', 'HTML/CSS', 'ASP.NET Core', 'Node.js', 'React', 'Angular', 'ASP.NET MVC 5', 'Oracle', 'SQL Server', 'Entity Framework', 'PostgresSQL', 'WPF', 'MongoDB'];
+        this.headerMessage = 'I have worked with';
+    }
     state = {
         message: ' ',
         typing: true
@@ -12,21 +16,20 @@ class TypistMessage extends Component {
 
 
     onTypingComplete = () => {
-        const skills = ['C#', 'C++', 'JavaScript', 'HTML/CSS', 'ASP.NET Core', 'Node.js', 'React', 'Angular', 'ASP.NET MVC 5', 'Oracle', 'SQL Server', 'Entity Framework', 'PostgresSQL', 'WPF', 'MongoDB'];
-
-        let newMessage = skills[Math.floor((Math.random() * skills.length))];
+        const length = this.skills.length;
+        let newMessage = this.skills[Math.floor((Math.random() * length))];
+        while (newMessage === this.state.message)
+            newMessage = this.skills[Math.floor((Math.random() * length))];
 
         this.setState({
             message: newMessage
         });
         this.setState({ typing: false }, () => {
-            this.setState({ typing: true })
+            this.setState({ typing: true });
         });
     };
-
     render() {
         const { message, typing } = this.state;
-        const headerMessage = 'I have worked with';
         const { mobile } = this.props;
         return (
             <Header color='blue' size={mobile ? 'medium' : 'huge'} textAlign='center'
@@ -34,7 +37,7 @@ class TypistMessage extends Component {
                     marginTop: mobile ? '5%' : '7%',
                     marginBottom: '5%'
                 }}>
-                {headerMessage}
+                {this.headerMessage}
                 <Header.Content>
                     {typing ?
                         <Typist
@@ -56,3 +59,7 @@ class TypistMessage extends Component {
 }
 
 export default TypistMessage;
+
+TypistMessage.propTypes = {
+    mobile: PropTypes.bool
+};

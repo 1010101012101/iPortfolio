@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import Particles from 'react-particles-js'
+import React from 'react';
+import Particles from 'react-particles-js';
 import backgroundImage from '../../assets/background.jpg';
 
 
 const Background = () =>
-    (
-        <Particles
-            params={{
+    ( <
+        Particles params = {
+            {
                 particles: {
                     number: {
                         value: 70,
@@ -111,13 +111,16 @@ const Background = () =>
                     }
                 },
                 retina_detect: true
-            }}
-            style={{
+            }
+        }
+        style = {
+            {
                 width: '100%',
                 height: '100%',
                 position: 'absolute',
                 backgroundImage: `url('${backgroundImage}')`,
-            }}
+            }
+        }
         />
     );
 

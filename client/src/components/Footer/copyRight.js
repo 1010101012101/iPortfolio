@@ -1,14 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Image, Header } from 'semantic-ui-react';
 
-const CopyRight = ({ scroll, logoImage, mobile }) => (
+const CopyRight = ({ subHeader, scroll, logoImage, mobile }) => (
     <Header textAlign='center'>
         <Image href="#" style={{ marginBottom: mobile ? '1%' : '5%' }} src={logoImage} size={mobile ? 'medium' : 'huge'} onClick={scroll} />
 
         <Header.Subheader>
-            Handmade by me - Khang Tran &copy; 2018
+            {subHeader}
         </Header.Subheader>
     </Header>
 );
 
 export default CopyRight;
+
+CopyRight.propTypes = {
+    scroll: PropTypes.func,
+    logoImage: PropTypes.string,
+    mobile: PropTypes.bool,
+    subHeader: PropTypes.string
+};

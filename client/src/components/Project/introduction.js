@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Header } from 'semantic-ui-react';
 
 const Introduction = ({ header, subHeader }) => (
@@ -14,3 +14,8 @@ const Introduction = ({ header, subHeader }) => (
 );
 
 export default Introduction;
+
+Introduction.propTypes = {
+    header: PropTypes.string,
+    subHeader: PropTypes.string
+};
