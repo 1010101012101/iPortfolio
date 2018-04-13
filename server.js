@@ -28,8 +28,8 @@ app.post('/contact', (req, res) => {
         port: 465,
         secure: true,
         auth: {
-            user: `cktran16x2@gmail.com`,
-            pass: `kaelkhangaA1!`
+            user: `user@gmail.com`,
+            pass: `Password!`
         }
     });
     mailOpts = {
