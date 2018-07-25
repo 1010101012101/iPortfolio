@@ -1,15 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Header } from 'semantic-ui-react';
+import {Header} from 'semantic-ui-react';
+import styled from 'styled-components';
 
-const SkillGroupHeader = ({ mobile, header, content }) => (
+const HeaderContent = styled(Header.Content)`
+  margin-bottom: 2%;
+`;
+
+const SubHeader = styled(Header.Subheader)`
+  margin-top: 2%;
+  margin-bottom: 5%;
+`;
+
+const SkillGroupHeader = ({mobile, header, content}) => (
     <Header color='blue' size={mobile ? 'medium' : 'large'} textAlign='center'>
-        <Header.Content style={{ marginBottom: '2%' }}>
-            {header}
-        </Header.Content>
-        <Header.Subheader style={{ marginTop: '2%', marginBottom: '5%' }}>
-            {content}
-        </Header.Subheader>
+        <HeaderContent>{header}</HeaderContent>
+        <SubHeader>{content}</SubHeader>
     </Header>
 );
 

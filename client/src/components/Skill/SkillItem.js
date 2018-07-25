@@ -1,11 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Container, Header } from 'semantic-ui-react';
+import {Container, Header} from 'semantic-ui-react';
+import styled from 'styled-components';
 
-const SkillItem = ({ header, icon, mobile }) => (
+const Icon = styled.i`
+  font-size: ${props => props.mobile ? '4em' : '5em'};;
+`;
+const SkillItem = ({header, icon, mobile}) => (
     <Container fluid>
         <Header size={mobile ? 'small' : 'tiny'} icon>
-            <i className={icon} style={{ fontSize: mobile ? '4em' : '5em' }}></i>
+            <Icon className={icon} mobile={mobile}/>
             <Header.Content>
                 {header}
             </Header.Content>
